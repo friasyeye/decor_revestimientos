@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="flex-grow container mx-auto px-4 py-8">
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/aplicaciones" element={<Aplicaciones />} />

@@ -8,7 +8,7 @@ interface OptimizedImageProps {
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({ srcName, alt, className }) => {
   return (
-    <picture className={className}>
+    <picture>
       {/* Mobile version: 600px width */}
       <source
         media="(max-width: 600px)"

@@ -7,11 +7,12 @@ import Aplicaciones from './pages/Aplicaciones';
 import Materiales from './pages/Materiales';
 import Nosotros from './pages/Nosotros';
 import Contacto from './pages/Contacto';
+import AplicacionDetalle from './pages/AplicacionDetalle';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen bg-white text-black font-body font-light selection:bg-black selection:text-white antialiased">
         <Header />
         <div className="flex-grow">
           <Routes>
@@ -20,6 +21,7 @@ function App() {
             <Route path="/materiales" element={<Materiales />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/aplicaciones/:slug" element={<AplicacionDetalle />} />
           </Routes>
         </div>
         <Footer />

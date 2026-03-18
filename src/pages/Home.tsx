@@ -8,16 +8,28 @@ const Home = () => {
     <main className="flex flex-col">
       {/* 1. HERO SECTION */}
       <FadeIn>
-        <section id="hero" className="container-custom py-32">
-          <div className="flex flex-col gap-8 max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
-              Especialistas en microcemento y revestimientos continuos en Barcelona
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-500 font-medium">
-              Elegancia y durabilidad en cada rincón de tu hogar
-            </p>
-            <div className="mt-8">
-              <OptimizedImage srcName="hero" alt="Microcemento en Barcelona" className="w-full h-[600px] object-cover rounded-3xl" />
+        <section id="hero" className="relative h-[95vh] md:h-screen w-full overflow-hidden bg-black">
+          {/* Imagen Hero - Posicionamiento ajustado: desplazamiento derecha en desktop, izquierda en móvil */}
+          <OptimizedImage
+            srcName="hero"
+            alt="Microcemento en Barcelona"
+            className="absolute inset-0 w-full h-full object-cover md:object-[0%_bottom] md:scale-110"
+          />
+
+          {/* Overlay para legibilidad */}
+          <div className="absolute inset-0 bg-black/40" />
+
+          {/* Titulares alineados a la izquierda y desplazados hacia arriba */}
+          <div className="absolute inset-0 flex items-start pt-[25%] md:pt-0 md:items-center">
+            <div className="w-full max-w-7xl mx-auto px-6 md:px-10 text-white text-left md:-mt-22">
+              <div className="flex flex-col gap-4 md:gap-3 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+                <h1 className="text-[10px] md:text-[13px] font-geist tracking-tighter text-white/90 font-medium drop-shadow-sm">
+                  Especialistas en microcemento y revestimientos en Barcelona
+                </h1>
+                <p className="text-4xl sm:text-5xl md:text-7xl font-instrumental tracking-tighter leading-[0.85] italic drop-shadow-md">
+                  Elegancia y durabilidad <br /> en cada rincón de tu hogar
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -25,88 +37,167 @@ const Home = () => {
 
       {/* 2. PROYECTOS PREVIEW (Text Left, Image Right) */}
       <FadeIn delay={0.2}>
-        <section id="proyectos" className="container-custom py-32 grid md:grid-cols-2 gap-20 items-center">
-          <div className="flex flex-col gap-8 order-2 md:order-1">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Transformamos superficies, creamos ambientes</h2>
-            <div className="flex flex-col gap-6 text-gray-600 text-lg leading-relaxed">
+        <section id="proyectos" className="w-full border-b border-black/[0.03]">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-20 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+          <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:-mt-2 md:pl-8">
+            <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">Transformamos superficies, creamos ambientes</h2>
+            <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
               <p>
-                A menudo, cuando alguien busca microcemento para su casa, se pierde entre marcas, catálogos y tecnicismos. Es fácil abrumarse con muestras y texturas sin saber realmente qué es lo que mejor va a funcionar en un suelo de alto tránsito o en una piscina expuesta al sol.
+                A menudo, cuando alguien busca microcemento para su casa, se pierde entre marcas, catálogos y tecnicismos. Es fácil abrumarse sin saber qué funcionará mejor en ese baño que quieres impecable o en el suelo del salón donde tu familia hace vida a diario.
               </p>
               <p>
-                En Decor Revestimientos no vendemos botes de material; ejecutamos tu proyecto de principio a fin. 
+                En Decor Revestimientos no vendemos material; ejecutamos tu proyecto para garantizar una inversión segura y sin sorpresas. Valoramos cada soporte para aplicar la solución técnica de mayor pureza que asegure un acabado impecable y duradero.
               </p>
               <p>
-                Nuestra labor comienza mucho antes de aplicar la primera capa. Nos sentamos contigo para entender qué uso tendrá cada espacio y te asesoramos para elegir la solución técnica que realmente necesitas. No aplicamos por aplicar; seleccionamos los materiales de mayor pureza y resistencia para garantizar que ese acabado impecable que buscas hoy, siga igual dentro de muchos años.
-              </p>
-              <p>
-                Nos especializamos en lo que otros consideran difícil. Por eso, además del microcemento tradicional, somos expertos ejecutores de Mortex, pensado para quienes buscan un nivel de exclusividad y durabilidad que va un paso más allá.
-              </p>
-              <p>
-                Al final, nuestro trabajo consiste en que tú solo tengas que imaginar el espacio. De la técnica, la precisión y la ejecución perfecta, nos encargamos nosotros.
+                Somos expertos en aplicaciones complejas y ejecutores certificados de Mortex, un micro-mortero exclusivo para quienes buscan una resistencia superior y un diseño sofisticado. Tú solo imagina el espacio; de la precisión técnica y la ejecución perfecta nos encargamos nosotros.
               </p>
             </div>
-            <Link to="/materiales" className="inline-flex items-center justify-center gap-2 btn-premium self-start">
-              ver galeria de trabajos <ArrowRight size={18} />
+            <Link to="/materiales" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 transition-all duration-300 border border-black hover:bg-black hover:text-white self-start">
+              Ver galeria de trabajos <ArrowRight size={18} />
             </Link>
           </div>
           <div className="order-1 md:order-2">
-            <OptimizedImage srcName="proyectos" alt="Nuestros Proyectos" className="w-full h-[700px] object-cover rounded-3xl" />
+            <OptimizedImage srcName="estancia" alt="Nuestros Proyectos" className="w-[80%] h-auto md:ml-auto md:mr-10" />
+          </div>
           </div>
         </section>
       </FadeIn>
 
-      {/* 3. SERVICIOS PREVIEW (Text Right, Image Left) */}
+      {/* 3. PRECISIÓN EN CADA DETALLE CON TARJETAS */}
       <FadeIn delay={0.4}>
-        <section id="servicios" className="container-custom py-32 grid md:grid-cols-2 gap-20 items-center">
-          <div>
-            <OptimizedImage srcName="aplicaciones" alt="Especialización Técnica" className="w-full h-[700px] object-cover rounded-3xl" />
-          </div>
-          <div className="flex flex-col gap-8">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Especialización técnica aplicada a cada superficie</h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              No todas las superficies sufren el mismo desgaste: suelos, paredes, baños y piscinas tienen exigencias técnicas completamente distintas. Por eso, nuestro trabajo como especialistas consiste en aplicar el material específico que garantiza la máxima adherencia y resistencia en cada ambiente. Entendemos que no tienes por qué conocer las diferencias entre un material para suelos como el Atlantic o la delicadeza técnica de un micro-mortero como el Mortex; nuestro papel es asesorarte y ejecutar la aplicación perfecta para que tú solo disfrutes del acabado final.
-            </p>
-            <Link to="/aplicaciones" className="inline-flex items-center justify-center gap-2 btn-premium self-start">
-              ver nuestras especialidades <ArrowRight size={18} />
-            </Link>
+        <section id="precision" className="w-full border-b border-black/[0.03]" style={{ backgroundColor: '#6B6363' }}>
+          <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-32 flex flex-col gap-12 md:gap-16">
+            <div className="flex flex-col gap-6 md:gap-8">
+              <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter text-white">Precisión en cada detalle y espacio</h2>
+              <div className="flex flex-col gap-4 md:gap-6 text-white/90 text-base md:text-lg leading-relaxed font-body max-w-2xl">
+                <p>
+                  Cada proyecto es único y merece un enfoque personalizado. Por eso, analizamos las condiciones de humedad, tránsito y soporte de cada espacio para garantizar que el revestimiento sea, ante todo, una solución definitiva
+                </p>
+              </div>
+            </div>
+
+            {/* SERVICIOS GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Card 1: Baños y Zonas Húmedas */}
+              <Link to="/aplicaciones/banos-y-zonas-humedas" className="flex flex-col gap-6 group">
+                <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
+                  <img
+                    src="/src/assets/raw/servicios_baño.jpg"
+                    alt="Baños y Zonas Húmedas"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <ArrowRight size={20} className="text-black" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-instrumental italic tracking-tighter text-white mb-2">Baños y Zonas Húmedas</h3>
+                  <p className="text-white/80 text-sm leading-relaxed font-body">
+                    Superficies sin cortes ni interrupciones que garantizan higiene absoluta y resistencia total a la humedad. Un diseño de alto impacto visual totalmente adherente sobre cualquier soporte existente.
+                  </p>
+                </div>
+              </Link>
+
+              {/* Card 2: Exteriores y Suelos */}
+              <Link to="/aplicaciones/exteriores-y-suelos" className="flex flex-col gap-6 group">
+                <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
+                  <img
+                    src="/src/assets/raw/servicios_suelo.jpg"
+                    alt="Exteriores y Suelos"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <ArrowRight size={20} className="text-black" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-instrumental italic tracking-tighter text-white mb-2">Exteriores y Suelos</h3>
+                  <p className="text-white/80 text-sm leading-relaxed font-body">
+                    Suelos que aportan amplitud y resisten el uso diario más exigente. Un acabado continuo y elegante que une tus espacios interiores y exteriores con una durabilidad máxima.
+                  </p>
+                </div>
+              </Link>
+
+              {/* Card 3: Piscinas */}
+              <Link to="/aplicaciones/piscinas" className="flex flex-col gap-6 group">
+                <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
+                  <img
+                    src="/src/assets/raw/servicios_piscinas.png"
+                    alt="Piscinas"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <ArrowRight size={20} className="text-black" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-instrumental italic tracking-tighter text-white mb-2">Piscinas</h3>
+                  <p className="text-white/80 text-sm leading-relaxed font-body">
+                    El efecto de agua continua que buscas para tu jardín. Un revestimiento de alta pureza que garantiza la seguridad y la estanqueidad de tu piscina con un diseño de vanguardia.
+                  </p>
+                </div>
+              </Link>
+
+              {/* Card 4: Escaleras */}
+              <Link to="/aplicaciones/escaleras" className="flex flex-col gap-6 group">
+                <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
+                  <img
+                    src="/src/assets/raw/servicios_escalera.jpg"
+                    alt="Escaleras"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <ArrowRight size={20} className="text-black" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-instrumental italic tracking-tighter text-white mb-2">Escaleras</h3>
+                  <p className="text-white/80 text-sm leading-relaxed font-body">
+                    Transforma tus escaleras en una pieza de diseño de una sola pieza. Eliminamos los cortes y juntas del gres tradicional para lograr una estética limpia, ligera y muy fácil de mantener.
+                  </p>
+                </div>
+              </Link>
+            </div>
           </div>
         </section>
       </FadeIn>
 
       {/* 4. NOSOTROS PREVIEW (Text Left, Image Right) */}
       <FadeIn delay={0.6}>
-        <section id="nosotros" className="container-custom py-32 grid md:grid-cols-2 gap-20 items-center">
-          <div className="flex flex-col gap-8 order-2 md:order-1">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">La maestría de un equipo que conoce el material</h2>
-            <div className="flex flex-col gap-6 text-gray-600 text-lg leading-relaxed">
+        <section id="nosotros" className="w-full border-b border-black/[0.03]">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-20 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+          <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:-mt-2 md:pl-8">
+            <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">La maestría de un equipo que conoce el material</h2>
+            <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
               <p>
                 En Decor Revestimientos sumamos más de 7 años de trayectoria especializándonos en la aplicación de microcementos y micro-morteros de alta gama. Como ejecutores certificados en Barcelona, analizamos cada superficie para asegurar resultados impecables que perduran en el tiempo.
               </p>
-              <p>
+              <p className="hidden sm:block">
                 Entendemos que el éxito de un proyecto en Barcelona reside en la precisión de la mano de obra y en la elección de la solución técnica adecuada para cada proyecto. Gracias a nuestra metodologia aportamos el rigor técnico necesario para que estética y resistencia caminen siempre de la mano.
               </p>
             </div>
-            <Link to="/nosotros" className="inline-flex items-center justify-center gap-2 btn-premium self-start">
-              ver galeria de trabajos <ArrowRight size={18} />
+            <Link to="/nosotros" className="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity font-medium">
+              Descubre más sobre el equipo
             </Link>
           </div>
           <div className="order-1 md:order-2">
-            <OptimizedImage srcName="decor" alt="Nuestro Equipo Decor Revestimientos" className="w-full h-[700px] object-cover rounded-3xl" />
+            <OptimizedImage srcName="nosotros" alt="Nuestro Equipo Decor Revestimientos" className="w-[80%] h-auto md:ml-auto md:mr-10" />
+          </div>
           </div>
         </section>
       </FadeIn>
 
       {/* 5. WHATSAPP CTA */}
       <FadeIn delay={0.8}>
-        <section id="whatsapp" className="container-custom py-40 text-center flex flex-col items-center">
-          <div className="flex flex-col gap-10 max-w-3xl">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter">¿Hablamos de tu proyecto ahora mismo?</h2>
-            <p className="text-xl text-gray-500">
+        <section id="whatsapp" className="max-w-7xl mx-auto px-6 md:px-4 py-24 md:py-40 text-center flex flex-col items-center">
+          <div className="flex flex-col gap-8 md:gap-10 max-w-3xl">
+            <h2 className="text-4xl md:text-6xl font-instrumental italic tracking-tighter">¿Hablamos de tu proyecto ahora mismo?</h2>
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed font-body">
               Cuéntanos tu idea y te asesoraremos sobre la solución técnica que mejor se adapta a las necesidades de tu espacio. Solicita hoy mismo tu presupuesto personalizado para tu espacio en Barcelona sin compromiso.
             </p>
             <div className="mt-4">
-              <a href="https://wa.me/yournumber" className="inline-flex items-center justify-center bg-black text-white px-12 py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform duration-300 shadow-xl">
-                SOLICITAR PRESUPUESTO PERSONALIZADO
+              <a href="https://wa.me/34603143050?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto%20personalizado" className="inline-flex items-center justify-center rounded-full px-5 py-2 md:px-8 md:py-3 text-sm md:text-base transition-all duration-300 border border-black bg-black text-white">
+                Pedir presupuesto personalizado
               </a>
             </div>
           </div>

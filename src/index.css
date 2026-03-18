@@ -1,51 +1,17 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=Instrumental+Serif:ital@0;1&family=Geist:wght@100..900&family=Gidole&family=DM+Serif+Display&display=swap');
 
 @theme {
-  --font-titles: "Roboto Slab", serif;
+  --font-titles: "STIX Two Text", serif;
   --font-body: "Noto Sans", sans-serif;
+  --font-instrumental: "Instrumental Serif", serif;
+  --font-geist: "Geist", sans-serif;
+  --font-gidole: "Gidole", sans-serif;
+  --font-dm: "DM Serif Display", serif;
 }
 
-:root {
-  font-family: var(--font-body);
-  line-height: 1.5;
-  font-weight: 300;
-
-  color-scheme: light;
-  color: black;
-  background-color: white;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  color: black;
-  background-color: white;
-  font-family: var(--font-body);
-  font-weight: 300;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-titles);
-  font-weight: 500;
-  @apply tracking-tight leading-tight;
-}
-
-.container-custom {
-  @apply max-w-7xl mx-auto px-4;
-}
-
-.btn-premium {
-  @apply rounded-full px-8 py-3 transition-all duration-300 border border-black hover:bg-black hover:text-white;
-}
-
-#root {
-  width: 100%;
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

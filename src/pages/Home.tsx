@@ -23,42 +23,60 @@ const Home = () => {
           <div className="absolute inset-0 flex items-start pt-[25%] md:pt-0 md:items-center">
             <div className="w-full max-w-7xl mx-auto px-6 md:px-10 text-white text-left md:-mt-22">
               <div className="flex flex-col gap-4 md:gap-3 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                <h1 className="text-[10px] md:text-[13px] font-geist tracking-tighter text-white/90 font-medium drop-shadow-sm">
+                <h1 className="text-[12px] md:text-[15px] font-geist tracking-tighter text-white/90 font-medium drop-shadow-sm mb-1 md:mb-0">
                   Especialistas en microcemento y revestimientos en Barcelona
                 </h1>
-                <p className="text-4xl sm:text-5xl md:text-7xl font-instrumental tracking-tighter leading-[0.85] italic drop-shadow-md">
+                <p className="text-4xl sm:text-5xl md:text-7xl font-instrumental tracking-tighter leading-tight md:leading-[0.85] italic drop-shadow-md">
                   Elegancia y durabilidad <br /> en cada rincón de tu hogar
                 </p>
+                {/* CTA mobile only */}
+                <div className="flex flex-col gap-2 mt-2 md:hidden">
+                  <a
+                    href="https://wa.me/34603143050?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto%20personalizado"
+                    className="inline-flex items-center gap-2 self-start rounded-lg px-5 py-3 text-sm font-medium font-gidole bg-white text-black hover:bg-white/90 transition-all duration-300"
+                  >
+                    Calcula tu presupuesto <ArrowRight size={15} />
+                  </a>
+                  <p className="text-xs text-white/60 font-body">Te llevará menos de 2 minutos</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </FadeIn>
 
-      {/* 2. PROYECTOS PREVIEW (Text Left, Image Right) */}
+      {/* 2. PROYECTOS PREVIEW — full-bleed image right */}
       <FadeIn delay={0.2}>
-        <section id="proyectos" className="w-full border-b border-black/[0.03]">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-20 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
-          <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:-mt-2 md:pl-8">
-            <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">Transformamos superficies, creamos ambientes</h2>
-            <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
-              <p>
-                A menudo, cuando alguien busca microcemento para su casa, se pierde entre marcas, catálogos y tecnicismos. Es fácil abrumarse sin saber qué funcionará mejor en ese baño que quieres impecable o en el suelo del salón donde tu familia hace vida a diario.
-              </p>
-              <p>
-                En Decor Revestimientos no vendemos material; ejecutamos tu proyecto para garantizar una inversión segura y sin sorpresas. Valoramos cada soporte para aplicar la solución técnica de mayor pureza que asegure un acabado impecable y duradero.
-              </p>
-              <p>
-                Somos expertos en aplicaciones complejas y ejecutores certificados de Mortex, un micro-mortero exclusivo para quienes buscan una resistencia superior y un diseño sofisticado. Tú solo imagina el espacio; de la precisión técnica y la ejecución perfecta nos encargamos nosotros.
-              </p>
+        <section id="proyectos" className="w-full overflow-hidden border-b border-black/[0.03]">
+          <div className="flex flex-col md:flex-row min-h-[560px] md:min-h-[680px]">
+            {/* TEXT — left column, aligned to site container */}
+            <div className="order-2 md:order-1 md:w-1/2 flex items-center py-14 md:py-0">
+              <div className="w-full px-6 md:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] md:pr-10 xl:pr-16 flex flex-col gap-6 md:gap-8">
+                <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">Transformamos superficies, creamos ambientes</h2>
+                <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
+                  <p>
+                    A menudo, cuando alguien busca microcemento para su casa, se pierde entre marcas, catálogos y tecnicismos. Es fácil abrumarse sin saber qué funcionará mejor en ese baño que quieres impecable o en el suelo del salón donde tu familia hace vida a diario.
+                  </p>
+                  <p>
+                    En Decor Revestimientos no vendemos material; ejecutamos tu proyecto para garantizar una inversión segura y sin sorpresas. Valoramos cada soporte para aplicar la solución técnica de mayor pureza que asegure un acabado impecable y duradero.
+                  </p>
+                  <p>
+                    Somos expertos en aplicaciones complejas y ejecutores certificados de Mortex, un micro-mortero exclusivo para quienes buscan una resistencia superior y un diseño sofisticado. Tú solo imagina el espacio; de la precisión técnica y la ejecución perfecta nos encargamos nosotros.
+                  </p>
+                </div>
+                <Link to="/materiales" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 transition-all duration-300 border border-black hover:bg-black hover:text-white self-start">
+                  Ver galeria de trabajos <ArrowRight size={18} />
+                </Link>
+              </div>
             </div>
-            <Link to="/materiales" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 transition-all duration-300 border border-black hover:bg-black hover:text-white self-start">
-              Ver galeria de trabajos <ArrowRight size={18} />
-            </Link>
-          </div>
-          <div className="order-1 md:order-2">
-            <OptimizedImage srcName="estancia" alt="Nuestros Proyectos" className="w-[80%] h-auto md:ml-auto md:mr-10" />
-          </div>
+            {/* IMAGE — right column, full-bleed to viewport right edge */}
+            <div className="order-1 md:order-2 w-full md:w-1/2 h-[300px] md:h-auto mt-16 md:mt-0 md:py-16">
+              <img
+                src="/src/assets/raw/terraza_microcemento.jpg"
+                alt="Terraza con microcemento"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </section>
       </FadeIn>
@@ -166,23 +184,23 @@ const Home = () => {
       <FadeIn delay={0.6}>
         <section id="nosotros" className="w-full border-b border-black/[0.03]">
           <div className="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-20 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
-          <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:-mt-2 md:pl-8">
-            <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">La maestría de un equipo que conoce el material</h2>
-            <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
-              <p>
-                En Decor Revestimientos sumamos más de 7 años de trayectoria especializándonos en la aplicación de microcementos y micro-morteros de alta gama. Como ejecutores certificados en Barcelona, analizamos cada superficie para asegurar resultados impecables que perduran en el tiempo.
-              </p>
-              <p className="hidden sm:block">
-                Entendemos que el éxito de un proyecto en Barcelona reside en la precisión de la mano de obra y en la elección de la solución técnica adecuada para cada proyecto. Gracias a nuestra metodologia aportamos el rigor técnico necesario para que estética y resistencia caminen siempre de la mano.
-              </p>
+            <div className="flex flex-col gap-6 md:gap-8 order-1 md:order-1 md:-mt-2 md:pl-8">
+              <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">La maestría de un equipo que conoce el material</h2>
+              <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
+                <p>
+                  En Decor Revestimientos sumamos más de 7 años de trayectoria especializándonos en la aplicación de microcementos y micro-morteros de alta gama. Como ejecutores certificados en Barcelona, analizamos cada superficie para asegurar resultados impecables que perduran en el tiempo.
+                </p>
+                <p className="hidden sm:block">
+                  Entendemos que el éxito de un proyecto en Barcelona reside en la precisión de la mano de obra y en la elección de la solución técnica adecuada para cada proyecto. Gracias a nuestra metodologia aportamos el rigor técnico necesario para que estética y resistencia caminen siempre de la mano.
+                </p>
+              </div>
+              <Link to="/nosotros" className="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity font-medium">
+                Descubre más sobre el equipo
+              </Link>
             </div>
-            <Link to="/nosotros" className="inline-flex items-center gap-2 text-black hover:opacity-70 transition-opacity font-medium">
-              Descubre más sobre el equipo
-            </Link>
-          </div>
-          <div className="order-1 md:order-2">
-            <OptimizedImage srcName="nosotros" alt="Nuestro Equipo Decor Revestimientos" className="w-[80%] h-auto md:ml-auto md:mr-10" />
-          </div>
+            <div className="order-2 md:order-2 flex justify-center md:block">
+              <OptimizedImage srcName="nosotros" alt="Nuestro Equipo Decor Revestimientos" className="w-[80%] h-auto md:ml-auto md:mr-10" />
+            </div>
           </div>
         </section>
       </FadeIn>

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFloating from './components/WhatsAppFloating';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Aplicaciones from './pages/Aplicaciones';
 import Materiales from './pages/Materiales';
@@ -12,6 +13,7 @@ import AplicacionDetalle from './pages/AplicacionDetalle';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white text-black font-body font-light selection:bg-black selection:text-white antialiased">
         <Header />
         <div className="flex-grow">

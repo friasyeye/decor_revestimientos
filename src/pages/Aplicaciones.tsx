@@ -7,21 +7,35 @@ const Aplicaciones = () => {
   return (
     <main className="flex flex-col">
       <FadeIn>
-        <section className="w-full border-b border-black/[0.03]">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-20 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
-            <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:-mt-2 md:pl-8">
-              <h1 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">Especialización técnica aplicada a cada superficie</h1>
-              <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
-                <p>
-                  Suelos, paredes, baños y piscinas tienen exigencias técnicas completamente distintas. No se trata solo de elegir un color, sino de entender que cada rincón de tu hogar requiere un tratamiento específico para soportar el uso diario, la humedad o el tránsito constante. Como especialistas, nuestro trabajo es aplicar el material exacto que garantiza la máxima adherencia y resistencia según el ambiente, asegurando que el revestimiento sea una solución definitiva y no solo estética.
-                </p>
-                <p>
-                  Aplicamos esta precisión técnica en la renovación de baños y cocinas resistentes a la humedad y en piscinas con estanqueidad total. También ejecutamos suelos y escaleras de alto tránsito, logrando acabados sin juntas que garantizan una estética moderna y de fácil mantenimiento en toda tu vivienda.
-                </p>
-              </div>
+        <section className="w-full overflow-hidden border-b border-black/[0.03]">
+          {/* Mobile layout: white space → image → text */}
+          <div className="flex flex-col md:hidden pt-24">
+            <div className="w-full">
+              <img
+                src="/src/assets/raw/habitacion_lamp.jpg"
+                alt="Especialización Técnica"
+                className="w-full h-auto object-cover"
+              />
             </div>
-            <div className="order-1 md:order-2">
-              <img src="/src/assets/raw/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-full max-w-sm h-auto md:ml-16 object-cover" />
+            <div className="px-6 py-12 flex flex-col gap-6">
+              <p className="text-xs font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
+              <h1 className="text-3xl font-instrumental italic tracking-tighter">Especialización técnica aplicada a cada superficie</h1>
+              <p className="text-gray-600 text-base leading-relaxed font-body">
+                No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
+              </p>
+            </div>
+          </div>
+          {/* Desktop layout: same structure as Materiales, image flush right */}
+          <div className="hidden md:grid md:grid-cols-2 gap-10 md:gap-20 items-start max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 w-full">
+            <div className="flex flex-col gap-8 order-2 md:order-1">
+              <p className="text-sm font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
+              <h1 className="text-5xl font-instrumental italic tracking-tighter">Especialización técnica aplicada a cada superficie</h1>
+              <p className="text-gray-600 text-lg leading-relaxed font-body">
+                No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
+              </p>
+            </div>
+            <div className="order-1 md:order-2 flex justify-end">
+              <img src="/src/assets/raw/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-[85%] h-auto object-cover" />
             </div>
           </div>
         </section>

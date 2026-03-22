@@ -8,15 +8,18 @@ const Materiales = () => {
       {/* HERO HEADER */}
       <FadeIn>
         <section className="w-full border-b border-black/[0.03] pt-28 pb-20">
-          <div className="max-w-7xl mx-auto px-6 md:px-10">
-            <div className="max-w-3xl">
-              <p className="text-xs md:text-sm font-body text-gray-400 uppercase tracking-widest mb-6">Materiales</p>
-              <h1 className="text-4xl md:text-6xl font-instrumental italic tracking-tighter leading-tight mb-8">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+            <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:max-w-3xl">
+              <p className="text-xs md:text-sm font-body text-gray-400 uppercase tracking-widest">Materiales</p>
+              <h1 className="text-4xl md:text-5xl font-instrumental italic tracking-tighter leading-tight">
                 El material correcto es la base de un resultado definitivo
               </h1>
               <p className="text-gray-500 text-base md:text-lg leading-relaxed font-body">
-                No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura.
+                No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
               </p>
+            </div>
+            <div className="order-1 md:order-2">
+              <img src="/src/assets/raw/mt_escalera.png" alt="Materiales" className="w-[85%] h-auto md:ml-auto md:mr-12 object-cover scale-90" />
             </div>
           </div>
         </section>
@@ -25,41 +28,40 @@ const Materiales = () => {
       {/* BLOQUE 01: MICROCEMENTO */}
       <FadeIn delay={0.1}>
         <section className="w-full border-b border-black/[0.03]">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-            {/* Imagen */}
-            <div className="order-1 overflow-hidden">
-              <img
-                src="/src/assets/raw/mc_1.jpg"
-                alt="Microcemento de alta gama"
-                loading="eager"
-                className="w-full h-[420px] md:h-[520px] object-cover transition-transform duration-700 hover:scale-[1.03]"
-              />
-            </div>
+          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-12 items-end">
             {/* Texto */}
-            <div className="order-2 flex flex-col gap-6 md:gap-8 md:pt-8">
-              <p className="text-xs font-body text-gray-400 uppercase tracking-widest">01</p>
-              <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">Microcemento de alta gama</h2>
-              <p className="text-gray-400 text-sm md:text-base font-body italic leading-relaxed">
-                El equilibrio entre resistencia y estética artesanal.
-              </p>
+            <div className="order-2 md:order-1 flex flex-col gap-6 md:gap-8">
+              <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">
+                <span className="text-6xl md:text-7xl font-body text-gray-400 uppercase tracking-widest italic block md:-mb-2">01</span>
+                Microcemento
+              </h2>
               <p className="text-gray-600 text-base leading-[1.8] font-body">
-                Es nuestra solución más versátil para transformar cualquier rincón del hogar. Se trata de un revestimiento mineral que aplicamos de forma artesanal para lograr superficies continuas, sin juntas y con un carácter único.
+                Es nuestra solución más versátil para proyectos de reforma y decoración. Se trata de un revestimiento continuo compuesto por una mezcla de cemento y resinas que aplicamos de forma artesanal, logrando superficies sin juntas con un espesor mínimo de apenas 2-3 mm.
               </p>
               {/* Feature grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 border-t border-black/[0.06] pt-8">
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-sm font-titles font-semibold">Suelos y pavimentos</h4>
-                  <p className="text-gray-500 text-xs leading-relaxed font-body">Elegancia del cemento pulido con resistencia superior al tránsito.</p>
+                  <h4 className="text-base font-instrumental font-semibold">Suelos de interior y pavimentos</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed font-body">Es la opción ideal para quienes buscan la estética del cemento pulido pero con una resistencia superior al tránsito diario. Al no tener juntas, aporta una amplitud visual única en salones y pasillos.</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-sm font-titles font-semibold">Paredes y detalles</h4>
-                  <p className="text-gray-500 text-xs leading-relaxed font-body">Acabado sedoso al tacto que aporta profundidad estética.</p>
+                  <h4 className="text-base font-instrumental font-semibold">Revestimiento de paredes y mobiliario</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed font-body">Gracias a su ligereza y gran adherencia, permite transformar paredes, frentes de cocina o muebles de obra, logrando un acabado sedoso y con sutiles aguas decorativas.</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-sm font-titles font-semibold">Exteriores</h4>
-                  <p className="text-gray-500 text-xs leading-relaxed font-body">Variante técnica antideslizante y resistente a rayos UV y lluvia.</p>
+                  <h4 className="text-base font-instrumental font-semibold">Zonas exteriores y terrazas</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed font-body">Aplicamos variantes específicas con texturas más rugosas que garantizan propiedades antideslizantes y una alta resistencia a la radiación solar y al desgaste climático.</p>
                 </div>
               </div>
+            </div>
+            {/* Imagen */}
+            <div className="order-1 md:order-2 overflow-hidden">
+              <img
+                src="/src/assets/raw/mc_1.jpg"
+                alt="Microcemento de alta gama"
+                loading="eager"
+                className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto"
+              />
             </div>
           </div>
         </section>
@@ -68,39 +70,29 @@ const Materiales = () => {
       {/* BLOQUE 02: MORTEX */}
       <FadeIn delay={0.1}>
         <section className="w-full border-b border-black/[0.03]">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-12 items-end">
             {/* Texto */}
-            <div className="order-2 md:order-1 flex flex-col gap-6 md:gap-8 md:pt-8">
-              <p className="text-xs font-body text-gray-400 uppercase tracking-widest">02</p>
-              <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">Micromortero Premium Mortex</h2>
-              <p className="text-gray-400 text-sm md:text-base font-body italic leading-relaxed">
-                La evolución técnica del revestimiento continuo.
-              </p>
+            <div className="order-2 md:order-1 flex flex-col gap-6 md:gap-8">
+              <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">
+                <span className="text-6xl md:text-7xl font-body text-gray-400 uppercase tracking-widest italic block md:-mb-2">02</span>
+                Mortex
+              </h2>
               <p className="text-gray-600 text-base leading-[1.8] font-body">
-                Cuando el proyecto exige un nivel superior de resistencia y exclusividad, apostamos por este material de autor. Un revestimiento denso e ideal para las zonas más comprometidas.
+                Es un revestimiento técnico de mayor densidad y dureza, diseñado para proyectos donde la exigencia es máxima. A diferencia del microcemento convencional, su composición mineral lo hace impermeable por naturaleza, lo que lo convierte en un material "de autor" con prestaciones técnicas inigualables.
               </p>
               {/* Key points */}
-              <div className="flex flex-col gap-5 mt-4 border-t border-black/[0.06] pt-8">
-                <div className="flex gap-4 items-start">
-                  <span className="text-black/20 font-body text-xs mt-1">—</span>
-                  <div>
-                    <h4 className="text-sm font-titles font-semibold mb-1">Impermeabilidad absoluta</h4>
-                    <p className="text-gray-500 text-xs leading-relaxed font-body">Naturalmente estanco, infalible para piscinas y duchas.</p>
-                  </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 border-t border-black/[0.06] pt-8">
+                <div className="flex flex-col gap-2">
+                  <h4 className="text-base font-instrumental font-semibold">Piscinas y zonas sumergidas</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed font-body">Es el material de referencia para revestir el vaso de una piscina o un jacuzzi. Su estanqueidad absoluta y su resistencia a los productos químicos garantizan un acabado seguro y duradero bajo el agua.</p>
                 </div>
-                <div className="flex gap-4 items-start">
-                  <span className="text-black/20 font-body text-xs mt-1">—</span>
-                  <div>
-                    <h4 className="text-sm font-titles font-semibold mb-1">Dureza extrema</h4>
-                    <p className="text-gray-500 text-xs leading-relaxed font-body">Alta resistencia mecánica que evita fisuras en espesores mínimos.</p>
-                  </div>
+                <div className="flex flex-col gap-2">
+                  <h4 className="text-base font-instrumental font-semibold">Baños y duchas de obra</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed font-body">Al ser un material estanco, es la solución definitiva para platos de ducha integrados y lavabos, eliminando cualquier riesgo de filtración sin necesidad de juntas de dilatación.</p>
                 </div>
-                <div className="flex gap-4 items-start">
-                  <span className="text-black/20 font-body text-xs mt-1">—</span>
-                  <div>
-                    <h4 className="text-sm font-titles font-semibold mb-1">Acabado Mineral de Autor</h4>
-                    <p className="text-gray-500 text-xs leading-relaxed font-body">Textura orgánica similar a la piedra natural.</p>
-                  </div>
+                <div className="flex flex-col gap-2">
+                  <h4 className="text-base font-instrumental font-semibold">Piezas arquitectónicas de alta resistencia</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed font-body">Su dureza mecánica permite aplicarlo en escaleras de mucho uso o encimeras de cocina, ofreciendo un tacto mineral que recuerda a la piedra natural tallada.</p>
                 </div>
               </div>
             </div>
@@ -108,9 +100,9 @@ const Materiales = () => {
             <div className="order-1 md:order-2 overflow-hidden">
               <img
                 src="/src/assets/raw/mc_2.jpg"
-                alt="Micromortero Mortex premium"
+                alt="Micromortero Mortex"
                 loading="lazy"
-                className="w-full h-[420px] md:h-[520px] object-cover transition-transform duration-700 hover:scale-[1.03]"
+                className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto"
               />
             </div>
           </div>
@@ -122,7 +114,7 @@ const Materiales = () => {
         <section className="w-full border-b border-black/[0.03]">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 flex flex-col gap-12 md:gap-16">
             <div className="flex flex-col gap-4">
-              <p className="text-xs font-body text-gray-400 uppercase tracking-widest">03</p>
+              <p className="text-6xl md:text-7xl font-body text-gray-400 uppercase tracking-widest italic md:-mb-4">03</p>
               <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter max-w-xl">Selección de tonos esenciales</h2>
               <p className="text-gray-500 text-base font-body leading-relaxed max-w-lg">
                 Una paleta cuidadosamente seleccionada que garantiza harmonía y atemporalidad en cualquier espacio.
@@ -145,18 +137,40 @@ const Materiales = () => {
                 </div>
               ))}
             </div>
-            <div className="mt-2">
-              <a
-                href="/carta-colores.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-body text-gray-500 hover:text-black transition-colors border-b border-gray-300 hover:border-black pb-0.5"
-              >
-                Ver carta de colores completa (PDF)
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
-                </svg>
-              </a>
+            <div className="mt-8 pt-8 border-t border-black/[0.06]">
+              <p className="text-gray-600 text-base leading-[1.8] font-body mb-6">
+                Nuestra selección de tonos esenciales representa el equilibrio perfecto entre tendencia y atemporalidad. Si buscas una personalización total, puedes consultar los catálogos completos de pigmentos y texturas según el material elegido para tu espacio:
+              </p>
+              <div className="flex flex-col gap-4">
+                <a
+                  href="/carta-colores-microcemento.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-body text-gray-600 hover:text-black transition-colors border-b border-gray-300 hover:border-black pb-0.5 w-fit"
+                >
+                  Ver carta de colores Microcemento (PDF)
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                  </svg>
+                </a>
+                <p className="text-gray-500 text-sm leading-relaxed font-body">
+                  Gamas minerales y texturas suaves para suelos y paredes.
+                </p>
+                <a
+                  href="/carta-colores-mortex.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-body text-gray-600 hover:text-black transition-colors border-b border-gray-300 hover:border-black pb-0.5 w-fit mt-4"
+                >
+                  Ver carta de colores Mortex (PDF)
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                  </svg>
+                </a>
+                <p className="text-gray-500 text-sm leading-relaxed font-body">
+                  Tonos orgánicos y acabados de alta resistencia técnica.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -166,15 +180,23 @@ const Materiales = () => {
       <FadeIn delay={0.1}>
         <section className="w-full border-b border-black/[0.03] py-16 md:py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-10 mb-10">
-            <p className="text-xs font-body text-gray-400 uppercase tracking-widest">04</p>
-            <h2 className="text-2xl md:text-3xl font-instrumental italic tracking-tighter mt-2">Marcas líderes en nuestra ejecución</h2>
+            <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter mb-6">Marcas líderes en nuestra ejecución</h2>
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed font-body max-w-3xl">
+              Nuestra ejecución solo es tan buena como el material que aplicamos. Por eso, trabajamos exclusivamente con fabricantes que certifican la pureza y durabilidad de sus productos, asegurando que cada proyecto en Barcelona cuente con el respaldo técnico de las firmas que lideran el sector.
+            </p>
           </div>
           <div className="relative overflow-hidden">
-            <div className="flex gap-16 md:gap-24" style={{ animation: 'marquee 20s linear infinite' }}>
+            <div
+              className="absolute inset-y-0 left-0 w-64 md:w-96 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"
+            />
+            <div
+              className="absolute inset-y-0 right-0 w-64 md:w-96 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"
+            />
+            <div className="flex justify-center gap-16 md:gap-24 px-24 md:px-40" style={{ animation: 'marquee 20s linear infinite' }}>
               {['MORTEX', 'BEALgrounds', 'Mapei', 'Bautech', 'Sopro', 'Sika', 'MORTEX', 'BEALgrounds', 'Mapei', 'Bautech', 'Sopro', 'Sika'].map((brand, i) => (
                 <span
                   key={i}
-                  className="text-gray-300 hover:text-gray-600 transition-colors duration-300 text-xl md:text-2xl font-titles font-semibold tracking-tight cursor-default select-none shrink-0"
+                  className="text-gray-300 hover:text-gray-600 transition-colors duration-300 text-3xl md:text-4xl font-titles font-semibold tracking-tight cursor-default select-none shrink-0"
                 >
                   {brand}
                 </span>

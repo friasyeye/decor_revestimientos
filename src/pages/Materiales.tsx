@@ -18,8 +18,8 @@ const Materiales = () => {
                 No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
               </p>
             </div>
-            <div className="order-1 md:order-2">
-              <img src="/src/assets/raw/mt_escalera.png" alt="Materiales" className="w-[85%] h-auto md:ml-auto md:mr-12 object-cover scale-90" />
+            <div className="order-1 md:order-2 flex justify-center md:block">
+              <img src="/src/assets/raw/mt_escalera.png" alt="Materiales" className="w-full h-auto md:w-[85%] md:ml-auto md:mr-12 object-contain" />
             </div>
           </div>
         </section>

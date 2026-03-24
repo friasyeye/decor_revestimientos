@@ -13,31 +13,31 @@ const Home = () => {
           <OptimizedImage
             srcName="hero"
             alt="Microcemento en Barcelona"
-            className="absolute inset-0 w-full h-full object-cover md:object-[0%_bottom] md:scale-110"
+            className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-[0%_bottom] md:scale-110"
           />
 
           {/* Overlay para legibilidad */}
           <div className="absolute inset-0 bg-black/40" />
 
           {/* Titulares alineados a la izquierda y desplazados hacia arriba */}
-          <div className="absolute inset-0 flex items-start pt-[25%] md:pt-0 md:items-center">
+          <div className="absolute inset-0 flex items-start pt-[18%] md:pt-0 md:items-center">
             <div className="w-full max-w-7xl mx-auto px-6 md:px-10 text-white text-left md:-mt-22">
-              <div className="flex flex-col gap-4 md:gap-3 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                <h1 className="text-[12px] md:text-[15px] font-geist tracking-tighter text-white/90 font-medium drop-shadow-sm mb-1 md:mb-0">
+              <div className="flex flex-col gap-4 md:gap-3 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000 pt-10 md:pt-0">
+                <h1 className="text-[10px] md:text-[15px] font-instrumental italic md:font-geist md:not-italic tracking-tighter text-white/90 font-medium drop-shadow-sm -mb-2 md:mb-0">
                   Especialistas en microcemento y revestimientos en Barcelona
                 </h1>
-                <p className="text-4xl sm:text-5xl md:text-7xl font-instrumental tracking-tighter leading-tight md:leading-[0.85] italic drop-shadow-md">
+                <p className="text-[1.85rem] sm:text-5xl md:text-7xl font-instrumental tracking-[-0.02em] md:tracking-tighter leading-[1.35] md:leading-[0.85] italic drop-shadow-md">
                   Elegancia y durabilidad <br /> en cada rincón de tu hogar
                 </p>
                 {/* CTA mobile only */}
-                <div className="flex flex-col gap-2 mt-2 md:hidden">
+                <div className="flex flex-col gap-2 mt-12 md:hidden">
                   <a
                     href="https://wa.me/34603143050?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto%20personalizado"
                     className="inline-flex items-center gap-2 self-start rounded-lg px-5 py-3 text-sm font-medium font-gidole bg-white text-black hover:bg-white/90 transition-all duration-300"
                   >
                     Calcula tu presupuesto <ArrowRight size={15} />
                   </a>
-                  <p className="text-xs text-white/60 font-body">Te llevará menos de 2 minutos</p>
+                  <p className="text-xs text-white/60 font-body mt-6">Te llevará menos de 2 minutos</p>
                 </div>
               </div>
             </div>
@@ -198,8 +198,10 @@ const Home = () => {
                 Descubre más sobre el equipo
               </Link>
             </div>
-            <div className="order-2 md:order-2 flex justify-center md:block">
-              <OptimizedImage srcName="nosotros" alt="Nuestro Equipo Decor Revestimientos" className="w-[80%] h-auto md:ml-auto md:mr-10" />
+            <div className="order-2 md:order-2 w-full md:flex md:justify-end">
+              <div className="w-full md:h-auto md:w-auto md:mr-10">
+                <OptimizedImage srcName="nosotros" alt="Nuestro Equipo Decor Revestimientos" className="w-full h-auto md:h-auto object-contain object-center" />
+              </div>
             </div>
           </div>
         </section>

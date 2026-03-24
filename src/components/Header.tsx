@@ -149,7 +149,7 @@ const Header = () => {
           >
             <X size={32} />
           </button>
-          <ul className="flex flex-col items-center list-none p-0 gap-8 text-2xl tracking-wide font-bold">
+          <ul className="flex flex-col items-center list-none p-0 gap-8 text-3xl font-instrumental italic tracking-tighter">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link

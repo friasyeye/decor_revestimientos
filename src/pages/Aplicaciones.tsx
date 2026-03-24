@@ -12,9 +12,9 @@ const Aplicaciones = () => {
           <div className="flex flex-col md:hidden pt-24">
             <div className="w-full">
               <picture>
-                <source media="(max-width: 600px)" srcSet="/optimized/habitacion_lamp-mobile.webp" type="image/webp" />
-                <source srcSet="/optimized/habitacion_lamp-desktop.webp" type="image/webp" />
-                <img src="/images/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-full h-auto object-cover" fetchPriority="high" loading="eager" />
+                <source media="(max-width: 600px)" srcSet="/optimized/tecnica_superficie-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/tecnica_superficie-desktop.webp" type="image/webp" />
+                <img src="/images/tecnica_superficie.png" alt="Especialización Técnica" className="w-full h-auto object-cover" fetchPriority="high" loading="eager" />
               </picture>
             </div>
             <div className="px-6 py-12 flex flex-col gap-6">
@@ -26,7 +26,7 @@ const Aplicaciones = () => {
             </div>
           </div>
           {/* Desktop layout: text contained, image flush right at natural size */}
-          <div className="hidden md:grid md:grid-cols-2 gap-20 items-center max-w-7xl mx-auto px-6 md:px-10 py-20">
+          <div className="hidden md:grid md:grid-cols-2 gap-20 items-start max-w-7xl mx-auto px-6 md:px-10 py-20">
             <div className="flex flex-col gap-8">
               <p className="text-sm font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
               <h1 className="text-5xl font-instrumental italic tracking-tighter">Especialización técnica aplicada a cada superficie</h1>
@@ -35,8 +35,8 @@ const Aplicaciones = () => {
               </p>
             </div>
             <picture>
-              <source srcSet="/optimized/habitacion_lamp-desktop.webp" type="image/webp" />
-              <img src="/images/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-auto max-h-[460px] ml-16" fetchPriority="high" loading="eager" />
+              <source srcSet="/optimized/tecnica_superficie-desktop.webp" type="image/webp" />
+              <img src="/images/tecnica_superficie.png" alt="Especialización Técnica" className="w-auto max-h-[400px] ml-16 mr-20 mt-9" fetchPriority="high" loading="eager" />
             </picture>
           </div>
         </section>

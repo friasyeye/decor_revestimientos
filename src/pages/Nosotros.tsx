@@ -9,11 +9,11 @@ const Nosotros = () => {
       {/* SECCIÓN 1: HERO */}
       <FadeIn>
         <section id="nosotros-hero" className="relative h-[70vh] w-full overflow-hidden bg-black">
-          <img
-            src="/src/assets/raw/aplicadores_microcemento.png"
-            alt="Decor Revestimientos Barcelona"
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
+          <picture>
+            <source media="(max-width: 600px)" srcSet="/optimized/aplicadores_microcemento-mobile.webp" type="image/webp" />
+            <source srcSet="/optimized/aplicadores_microcemento-desktop.webp" type="image/webp" />
+            <img src="/images/aplicadores_microcemento.png" alt="Decor Revestimientos Barcelona" className="absolute inset-0 w-full h-full object-cover opacity-60" fetchPriority="high" loading="eager" />
+          </picture>
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 flex items-center justify-center text-center px-6">
             <div className="flex flex-col gap-6 max-w-4xl">

@@ -14,6 +14,8 @@ const Home = () => {
             srcName="hero"
             alt="Microcemento en Barcelona"
             className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-[0%_bottom] md:scale-110"
+            fetchPriority="high"
+            loading="eager"
           />
 
           {/* Overlay para legibilidad */}
@@ -71,11 +73,11 @@ const Home = () => {
             </div>
             {/* IMAGE — right column, full-bleed to viewport right edge */}
             <div className="order-1 md:order-2 w-full md:w-1/2 h-[300px] md:h-auto mt-16 md:mt-0 md:py-16">
-              <img
-                src="/src/assets/raw/terraza_microcemento.jpg"
-                alt="Terraza con microcemento"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/terraza_microcemento-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/terraza_microcemento-desktop.webp" type="image/webp" />
+                <img src="/images/terraza_microcemento.jpg" alt="Terraza con microcemento" className="w-full h-full object-cover" loading="lazy" />
+              </picture>
             </div>
           </div>
         </section>
@@ -99,11 +101,11 @@ const Home = () => {
               {/* Card 1: Baños y Zonas Húmedas */}
               <Link to="/aplicaciones/banos-y-zonas-humedas" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_baño.jpg"
-                    alt="Baños y Zonas Húmedas"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_baño-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_baño-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_baño.jpg" alt="Baños y Zonas Húmedas" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>
@@ -119,11 +121,11 @@ const Home = () => {
               {/* Card 2: Exteriores y Suelos */}
               <Link to="/aplicaciones/exteriores-y-suelos" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_suelo.jpg"
-                    alt="Exteriores y Suelos"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_suelo-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_suelo-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_suelo.jpg" alt="Exteriores y Suelos" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>
@@ -139,11 +141,11 @@ const Home = () => {
               {/* Card 3: Piscinas */}
               <Link to="/aplicaciones/piscinas" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_piscinas.png"
-                    alt="Piscinas"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_piscinas-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_piscinas-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_piscinas.png" alt="Piscinas" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>
@@ -159,11 +161,11 @@ const Home = () => {
               {/* Card 4: Escaleras */}
               <Link to="/aplicaciones/escaleras" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_escalera.jpg"
-                    alt="Escaleras"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_escalera-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_escalera-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_escalera.jpg" alt="Escaleras" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>

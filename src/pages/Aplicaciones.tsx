@@ -11,11 +11,11 @@ const Aplicaciones = () => {
           {/* Mobile layout: white space → image → text */}
           <div className="flex flex-col md:hidden pt-24">
             <div className="w-full">
-              <img
-                src="/src/assets/raw/habitacion_lamp.jpg"
-                alt="Especialización Técnica"
-                className="w-full h-auto object-cover"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/habitacion_lamp-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/habitacion_lamp-desktop.webp" type="image/webp" />
+                <img src="/images/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-full h-auto object-cover" fetchPriority="high" loading="eager" />
+              </picture>
             </div>
             <div className="px-6 py-12 flex flex-col gap-6">
               <p className="text-xs font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
@@ -26,17 +26,18 @@ const Aplicaciones = () => {
             </div>
           </div>
           {/* Desktop layout: text contained, image flush right at natural size */}
-          <div className="hidden md:flex flex-row items-center">
-            <div className="w-1/2 py-24 pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] pr-10 xl:pr-16 flex flex-col gap-8">
+          <div className="hidden md:grid md:grid-cols-2 gap-20 items-center max-w-7xl mx-auto px-6 md:px-10 py-20">
+            <div className="flex flex-col gap-8">
               <p className="text-sm font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
               <h1 className="text-5xl font-instrumental italic tracking-tighter">Especialización técnica aplicada a cada superficie</h1>
               <p className="text-gray-600 text-lg leading-relaxed font-body">
                 No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
               </p>
             </div>
-            <div className="w-1/2 flex justify-end items-center overflow-hidden py-16">
-              <img src="/src/assets/raw/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-[70%] h-auto object-cover" />
-            </div>
+            <picture>
+              <source srcSet="/optimized/habitacion_lamp-desktop.webp" type="image/webp" />
+              <img src="/images/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-auto max-h-[460px] ml-16" fetchPriority="high" loading="eager" />
+            </picture>
           </div>
         </section>
       </FadeIn>
@@ -59,11 +60,11 @@ const Aplicaciones = () => {
               {/* Card 1: Baños y Zonas Húmedas */}
               <Link to="/aplicaciones/banos-y-zonas-humedas" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_baño.jpg"
-                    alt="Baños y Zonas Húmedas"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_baño-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_baño-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_baño.jpg" alt="Baños y Zonas Húmedas" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>
@@ -79,11 +80,11 @@ const Aplicaciones = () => {
               {/* Card 2: Exteriores y Suelos */}
               <Link to="/aplicaciones/exteriores-y-suelos" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_suelo.jpg"
-                    alt="Exteriores y Suelos"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_suelo-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_suelo-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_suelo.jpg" alt="Exteriores y Suelos" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>
@@ -99,11 +100,11 @@ const Aplicaciones = () => {
               {/* Card 3: Piscinas */}
               <Link to="/aplicaciones/piscinas" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_piscinas.png"
-                    alt="Piscinas"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_piscinas-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_piscinas-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_piscinas.png" alt="Piscinas" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>
@@ -119,11 +120,11 @@ const Aplicaciones = () => {
               {/* Card 4: Escaleras */}
               <Link to="/aplicaciones/escaleras" className="flex flex-col gap-6 group">
                 <div className="relative overflow-hidden rounded-[40px] aspect-[4/5]">
-                  <img
-                    src="/src/assets/raw/servicios_escalera.jpg"
-                    alt="Escaleras"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source media="(max-width: 600px)" srcSet="/optimized/servicios_escalera-mobile.webp" type="image/webp" />
+                    <source srcSet="/optimized/servicios_escalera-desktop.webp" type="image/webp" />
+                    <img src="/images/servicios_escalera.jpg" alt="Escaleras" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  </picture>
                   <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <ArrowRight size={20} className="text-black" />
                   </div>

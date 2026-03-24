@@ -168,11 +168,11 @@ const AplicacionDetalle = () => {
           {/* Mobile: imagen fija arriba + texto debajo */}
           <div className="block md:hidden">
             <div className="w-full h-[40vh] sticky top-0 z-10 overflow-hidden">
-              <img
-                src="/src/assets/raw/ap_baño.jpg"
-                alt="Baños y Zonas Húmedas"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/ap_baño-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/ap_baño-desktop.webp" type="image/webp" />
+                <img src="/images/ap_baño.jpg" alt="Baños y Zonas Húmedas" className="w-full h-full object-cover" loading="lazy" />
+              </picture>
             </div>
             <div className="px-6 py-16 flex flex-col gap-16">
               <StickyPoint num="01" title="Especialización en espacios críticos" text="En la reforma de un baño, la estética debe ir siempre acompañada de un rendimiento técnico impecable. Como ejecutores con más de 7 años de experiencia en Barcelona, entendemos que estos espacios requieren materiales que garanticen impermeabilidad total y una adherencia perfecta. No solo renovamos el aspecto; aplicamos soluciones técnicas que eliminan las juntas, evitando filtraciones y facilitando una higiene absoluta." />
@@ -203,11 +203,10 @@ const AplicacionDetalle = () => {
             {/* Imagen sticky */}
             <div className="w-1/2 flex-shrink-0">
               <div className="sticky top-0 h-screen overflow-hidden">
-                <img
-                  src="/src/assets/raw/ap_baño.jpg"
-                  alt="Baños y Zonas Húmedas"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source srcSet="/optimized/ap_baño-desktop.webp" type="image/webp" />
+                  <img src="/images/ap_baño.jpg" alt="Baños y Zonas Húmedas" className="w-full h-full object-cover" loading="lazy" />
+                </picture>
               </div>
             </div>
 
@@ -244,11 +243,11 @@ const AplicacionDetalle = () => {
           {/* Mobile */}
           <div className="block md:hidden">
             <div className="w-full h-[40vh] sticky top-0 z-10 overflow-hidden">
-              <img
-                src="/src/assets/raw/ap_suelo.jpg"
-                alt="Exteriores y Suelos"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/ap_suelo-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/ap_suelo-desktop.webp" type="image/webp" />
+                <img src="/images/ap_suelo.png" alt="Exteriores y Suelos" className="w-full h-full object-cover" loading="lazy" />
+              </picture>
             </div>
             <div className="px-6 py-16 flex flex-col gap-16">
               <StickyPoint num="01" title="Especialización en superficies exteriores" text="En exteriores, el revestimiento debe resistir mucho más que el paso del tiempo. Como ejecutores con más de 7 años de experiencia en Barcelona, diseñamos suelos y terrazas que eliminan las juntas tradicionales para crear superficies homogéneas y selladas. Nuestro objetivo es garantizar que cada m2 soporte cambios térmicos y uso intensivo sin degradarse ni perder su estética original." />
@@ -278,11 +277,10 @@ const AplicacionDetalle = () => {
           <div className="hidden md:flex w-full">
             <div className="w-1/2 flex-shrink-0">
               <div className="sticky top-0 h-screen overflow-hidden">
-                <img
-                  src="/src/assets/raw/ap_suelo.png"
-                  alt="Exteriores y Suelos"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source srcSet="/optimized/ap_suelo-desktop.webp" type="image/webp" />
+                  <img src="/images/ap_suelo.png" alt="Exteriores y Suelos" className="w-full h-full object-cover" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div className="w-1/2 flex flex-col gap-0 py-24 px-12 xl:px-20">
@@ -317,11 +315,11 @@ const AplicacionDetalle = () => {
           {/* Mobile */}
           <div className="block md:hidden">
             <div className="w-full h-[40vh] sticky top-0 z-10 overflow-hidden">
-              <img
-                src="/src/assets/raw/ap_escalera.jpg"
-                alt="Escaleras"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/ap_escalera-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/ap_escalera-desktop.webp" type="image/webp" />
+                <img src="/images/ap_escalera.jpg" alt="Escaleras" className="w-full h-full object-cover" loading="lazy" />
+              </picture>
             </div>
             <div className="px-6 py-16 flex flex-col gap-16">
               <StickyPoint num="01" title="Precisión técnica en cada peldaño" text="El revestimiento de escaleras es uno de los trabajos de ejecución más exigentes, ya que requiere una precisión milimétrica en superficies verticales e inclinadas. Como especialistas con más de 7 años de trayectoria en Barcelona, transformamos estructuras convencionales en piezas arquitectónicas monolíticas. Nuestro enfoque elimina las juntas y cortes habituales del gres o la piedra, logrando una continuidad visual que aporta ligereza y modernidad a cualquier espacio." />
@@ -351,11 +349,10 @@ const AplicacionDetalle = () => {
           <div className="hidden md:flex w-full">
             <div className="w-1/2 flex-shrink-0">
               <div className="sticky top-0 h-screen overflow-hidden">
-                <img
-                  src="/src/assets/raw/ap_escalera.jpg"
-                  alt="Escaleras"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source srcSet="/optimized/ap_escalera-desktop.webp" type="image/webp" />
+                  <img src="/images/ap_escalera.jpg" alt="Escaleras" className="w-full h-full object-cover" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div className="w-1/2 flex flex-col gap-0 py-24 px-12 xl:px-20">
@@ -390,11 +387,11 @@ const AplicacionDetalle = () => {
           {/* Mobile */}
           <div className="block md:hidden">
             <div className="w-full h-[40vh] sticky top-0 z-10 overflow-hidden">
-              <img
-                src="/src/assets/raw/ap_piscinas.png"
-                alt="Piscinas"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/ap_piscina-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/ap_piscina-desktop.webp" type="image/webp" />
+                <img src="/images/ap_piscina.png" alt="Piscinas" className="w-full h-full object-cover" loading="lazy" />
+              </picture>
             </div>
             <div className="px-6 py-16 flex flex-col gap-16">
               <StickyPoint num="01" title="Especialización en entornos acuáticos" text="El revestimiento de una piscina no es un simple acabado decorativo; es una solución de ingeniería que debe garantizar estanqueidad y durabilidad. Como ejecutores con más de 7 años de trayectoria en Barcelona, nos especializamos en sistemas continuos que protegen la estructura del vaso y eliminan las debilidades de los revestimientos tradicionales. Nuestro objetivo es crear una superficie monolítica que resista la presión del agua y los agentes químicos sin perder su integridad." />
@@ -424,11 +421,10 @@ const AplicacionDetalle = () => {
           <div className="hidden md:flex w-full">
             <div className="w-1/2 flex-shrink-0">
               <div className="sticky top-0 h-screen overflow-hidden">
-                <img
-                  src="/src/assets/raw/ap_piscina.png"
-                  alt="Piscinas"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source srcSet="/optimized/ap_piscina-desktop.webp" type="image/webp" />
+                  <img src="/images/ap_piscina.png" alt="Piscinas" className="w-full h-full object-cover" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div className="w-1/2 flex flex-col gap-0 py-24 px-12 xl:px-20">

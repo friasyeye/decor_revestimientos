@@ -19,7 +19,11 @@ const Materiales = () => {
               </p>
             </div>
             <div className="order-1 md:order-2 flex justify-center md:block">
-              <img src="/src/assets/raw/mt_escalera.png" alt="Materiales" className="w-full h-auto md:w-[85%] md:ml-auto md:mr-12 object-contain" />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/mt_escalera-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/mt_escalera-desktop.webp" type="image/webp" />
+                <img src="/images/mt_escalera.png" alt="Materiales" className="w-full h-auto md:w-[85%] md:ml-auto md:mr-12 object-contain" fetchPriority="high" loading="eager" />
+              </picture>
             </div>
           </div>
         </section>
@@ -56,12 +60,11 @@ const Materiales = () => {
             </div>
             {/* Imagen */}
             <div className="order-1 md:order-2 overflow-hidden">
-              <img
-                src="/src/assets/raw/mc_1.jpg"
-                alt="Microcemento de alta gama"
-                loading="eager"
-                className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/mc_1-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/mc_1-desktop.webp" type="image/webp" />
+                <img src="/images/mc_1.jpg" alt="Microcemento de alta gama" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto" />
+              </picture>
             </div>
           </div>
         </section>
@@ -98,12 +101,11 @@ const Materiales = () => {
             </div>
             {/* Imagen */}
             <div className="order-1 md:order-2 overflow-hidden">
-              <img
-                src="/src/assets/raw/mc_2.jpg"
-                alt="Micromortero Mortex"
-                loading="lazy"
-                className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto"
-              />
+              <picture>
+                <source media="(max-width: 600px)" srcSet="/optimized/mc_2-mobile.webp" type="image/webp" />
+                <source srcSet="/optimized/mc_2-desktop.webp" type="image/webp" />
+                <img src="/images/mc_2.jpg" alt="Micromortero Mortex" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto" />
+              </picture>
             </div>
           </div>
         </section>

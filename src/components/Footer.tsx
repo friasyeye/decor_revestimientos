@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="py-32 text-white border-t border-gray-700" style={{ backgroundColor: '#6B6363' }}>
+    <footer className="py-32 text-white border-t border-gray-700" style={{ backgroundColor: '#575353ff' }}>
       <div className="max-w-7xl mx-auto px-6 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-24">
           <div className="flex flex-col gap-6 md:col-span-1">

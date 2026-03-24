@@ -83,7 +83,7 @@ const Home = () => {
 
       {/* 3. PRECISIÓN EN CADA DETALLE CON TARJETAS */}
       <FadeIn delay={0.4}>
-        <section id="precision" className="w-full border-b border-black/[0.03]" style={{ backgroundColor: '#6B6363' }}>
+        <section id="precision" className="w-full border-b border-black/[0.03]" style={{ backgroundColor: '#575353ff' }}>
           <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-32 flex flex-col gap-12 md:gap-16">
             <div className="flex flex-col gap-6 md:gap-8">
               <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter text-white">Precisión en cada detalle y espacio</h2>

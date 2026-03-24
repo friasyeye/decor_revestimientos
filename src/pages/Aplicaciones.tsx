@@ -25,17 +25,17 @@ const Aplicaciones = () => {
               </p>
             </div>
           </div>
-          {/* Desktop layout: same structure as Materiales, image flush right */}
-          <div className="hidden md:grid md:grid-cols-2 gap-10 md:gap-20 items-start max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 w-full">
-            <div className="flex flex-col gap-8 order-2 md:order-1">
+          {/* Desktop layout: text contained, image flush right at natural size */}
+          <div className="hidden md:flex flex-row items-center">
+            <div className="w-1/2 py-24 pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] pr-10 xl:pr-16 flex flex-col gap-8">
               <p className="text-sm font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
               <h1 className="text-5xl font-instrumental italic tracking-tighter">Especialización técnica aplicada a cada superficie</h1>
               <p className="text-gray-600 text-lg leading-relaxed font-body">
                 No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
               </p>
             </div>
-            <div className="order-1 md:order-2 flex justify-end">
-              <img src="/src/assets/raw/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-[85%] h-auto object-cover" />
+            <div className="w-1/2 flex justify-end items-center overflow-hidden py-16">
+              <img src="/src/assets/raw/habitacion_lamp.jpg" alt="Especialización Técnica" className="w-[70%] h-auto object-cover" />
             </div>
           </div>
         </section>

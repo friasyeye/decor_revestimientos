@@ -26,3 +26,58 @@
     object-position: 65% center !important;
   }
 }
+
+/* ============================================
+   HEADER DARK/LIGHT TRANSITION SYSTEM
+   ============================================ */
+
+.site-header {
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.site-header.header--dark {
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+}
+
+.header-logo-light {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.header-logo-dark {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.header--dark .header-logo-light { opacity: 0; }
+.header--dark .header-logo-dark  { opacity: 1; }
+
+.header-nav-text {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.header--dark .header-nav-text { color: black; }
+
+.header-cta-btn {
+  background-color: white;
+  color: black;
+  border-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.header--dark .header-cta-btn {
+  background-color: #575353;
+  color: white;
+  border-color: transparent;
+}
+
+.header-mobile-icon {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.header--dark .header-mobile-icon { color: black; }

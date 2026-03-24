@@ -8,7 +8,7 @@ const Nosotros = () => {
 
       {/* SECCIÓN 1: HERO */}
       <FadeIn>
-        <section className="relative h-[70vh] w-full overflow-hidden bg-black">
+        <section id="nosotros-hero" className="relative h-[70vh] w-full overflow-hidden bg-black">
           <img
             src="/src/assets/raw/aplicadores_microcemento.png"
             alt="Decor Revestimientos Barcelona"

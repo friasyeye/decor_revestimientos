@@ -32,7 +32,7 @@ const Materiales = () => {
       {/* BLOQUE 01: MICROCEMENTO */}
       <FadeIn delay={0.1}>
         <section className="w-full border-b border-black/[0.03]">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-12 items-end">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-12 items-start">
             {/* Texto */}
             <div className="order-2 md:order-1 flex flex-col gap-6 md:gap-8">
               <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">
@@ -42,6 +42,13 @@ const Materiales = () => {
               <p className="text-gray-600 text-base leading-[1.8] font-body">
                 Es nuestra solución más versátil para proyectos de reforma y decoración. Se trata de un revestimiento continuo compuesto por una mezcla de cemento y resinas que aplicamos de forma artesanal, logrando superficies sin juntas con un espesor mínimo de apenas 2-3 mm.
               </p>
+              {/* Technical Callout */}
+              <div className="border-l-2 border-black/10 pl-5 py-1 bg-black/[0.02]">
+                <h4 className="text-sm font-body font-semibold text-black mb-2 uppercase tracking-widest">Adherencia universal y versatilidad</h4>
+                <p className="text-gray-500 text-sm leading-[1.8] font-body">
+                  La gran ventaja de nuestra técnica es la capacidad de aplicarse sobre prácticamente cualquier superficie: madera, cemento, yeso, mármol, cristales o azulejo antiguo (rachola). La única condición crítica es que el soporte original esté libre de humedades y en perfectas condiciones estructurales. Esta adherencia total nos permite renovar espacios sin generar escombros, manteniendo la cota mínima de espesor.
+                </p>
+              </div>
               {/* Feature grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 border-t border-black/[0.06] pt-8">
                 <div className="flex flex-col gap-2">
@@ -63,7 +70,7 @@ const Materiales = () => {
               <picture>
                 <source media="(max-width: 600px)" srcSet="/optimized/mc_1-mobile.webp" type="image/webp" />
                 <source srcSet="/optimized/mc_1-desktop.webp" type="image/webp" />
-                <img src="/images/mc_1.jpg" alt="Microcemento de alta gama" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto" />
+                <img src="/images/mc_1.jpg" alt="Microcemento de alta gama" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto md:mt-[5.5rem]" />
               </picture>
             </div>
           </div>
@@ -73,7 +80,7 @@ const Materiales = () => {
       {/* BLOQUE 02: MORTEX */}
       <FadeIn delay={0.1}>
         <section className="w-full border-b border-black/[0.03]">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-12 items-end">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-12 items-start">
             {/* Texto */}
             <div className="order-2 md:order-1 flex flex-col gap-6 md:gap-8">
               <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">
@@ -83,6 +90,13 @@ const Materiales = () => {
               <p className="text-gray-600 text-base leading-[1.8] font-body">
                 Es un revestimiento técnico de mayor densidad y dureza, diseñado para proyectos donde la exigencia es máxima. A diferencia del microcemento convencional, su composición mineral lo hace impermeable por naturaleza, lo que lo convierte en un material "de autor" con prestaciones técnicas inigualables.
               </p>
+              {/* Technical Callout */}
+              <div className="border-l-2 border-black/10 pl-5 py-1 bg-black/[0.02]">
+                <h4 className="text-sm font-body font-semibold text-black mb-2 uppercase tracking-widest">Compatibilidad técnica y flexibilidad</h4>
+                <p className="text-gray-500 text-sm leading-[1.8] font-body">
+                  Mortex destaca por una adherencia química y mecánica excepcional. Su formulación le permite 'anclarse' con total seguridad sobre soportes que otros materiales no toleran bien, como MDF, gresite de piscina, mármol o incluso cristal. Gracias a su elasticidad residual, absorbe las micro-tensiones del soporte original, convirtiéndolo en la solución definitiva para renovaciones complejas.
+                </p>
+              </div>
               {/* Key points */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 border-t border-black/[0.06] pt-8">
                 <div className="flex flex-col gap-2">
@@ -104,7 +118,7 @@ const Materiales = () => {
               <picture>
                 <source media="(max-width: 600px)" srcSet="/optimized/mc_2-mobile.webp" type="image/webp" />
                 <source srcSet="/optimized/mc_2-desktop.webp" type="image/webp" />
-                <img src="/images/mc_2.jpg" alt="Micromortero Mortex" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto" />
+                <img src="/images/mc_2.jpg" alt="Micromortero Mortex" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto md:mt-[5.5rem]" />
               </picture>
             </div>
           </div>

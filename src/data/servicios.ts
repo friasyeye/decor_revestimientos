@@ -78,6 +78,23 @@ export const servicios: Servicio[] = [
     ],
     metaDescription: 'Microcemento para escaleras en Barcelona. Acabado continuo sin juntas sobre estructura existente. Estética escultórica y alta resistencia al tránsito.',
   },
+  {
+    slug: 'mobiliario-y-proyectos-especiales',
+    title: 'Mobiliario y Proyectos Especiales',
+    description: 'Transformamos elementos cotidianos en piezas arquitectónicas únicas. Aplicación continua sobre mobiliario de autor, encimeras y volúmenes a medida con adherencia garantizada.',
+    heroImage: '/images/mc_1.jpg',
+    cardImage: '/images/mc_1.jpg',
+    extendedContent: '',
+    specs: [
+      { label: 'Soporte', value: 'Madera, MDF, metal, piedra' },
+      { label: 'Espesor', value: '1.5 - 3 mm' },
+      { label: 'Adherencia', value: 'Química y mecánica' },
+      { label: 'Sellado', value: 'Alta resistencia' },
+      { label: 'Uso', value: 'Interior, piezas únicas' },
+      { label: 'Personalización', value: 'Total (forma y color)' },
+    ],
+    metaDescription: 'Expertos en mobiliario de microcemento y Mortex en Barcelona. Creamos encimeras, lavabos y piezas de autor con acabados continuos y alta resistencia.',
+  },
 ];
 
 export const getServicio = (slug: string): Servicio | undefined =>

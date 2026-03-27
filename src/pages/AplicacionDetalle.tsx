@@ -26,6 +26,11 @@ const ctaContent: Record<string, { title: string; description: string; buttonTex
     description: 'Cuéntanos cómo es la estructura que quieres transformar y te explicaremos cómo convertirla en una pieza arquitectónica única sin cortes. Logra un acabado continuo y elegante en cada peldaño con nuestra ejecución de precisión.',
     buttonText: 'Pedir presupuesto personalizado',
   },
+  'mobiliario-y-proyectos-especiales': {
+    title: '¿Hablamos de tu proyecto especial?',
+    description: 'Cuéntanos qué piezas o elementos quieres transformar y te daremos una orientación técnica para lograr un acabado único y duradero. Desde encimeras hasta mobiliario de autor.',
+    buttonText: 'Pedir presupuesto personalizado',
+  },
 };
 
 const StickyPoint = ({ num, title, text }: { num: string; title: string; text: string }) => (
@@ -123,7 +128,7 @@ const AplicacionDetalle = () => {
       </FadeIn>
 
       {/* CONTENIDO TÉCNICO — solo para slugs que no tienen sticky scroll */}
-      {servicio.slug !== 'banos-y-zonas-humedas' && servicio.slug !== 'exteriores-y-suelos' && servicio.slug !== 'piscinas' && servicio.slug !== 'escaleras' && (
+      {servicio.slug !== 'banos-y-zonas-humedas' && servicio.slug !== 'exteriores-y-suelos' && servicio.slug !== 'piscinas' && servicio.slug !== 'escaleras' && servicio.slug !== 'mobiliario-y-proyectos-especiales' && (
         <FadeIn delay={0.2}>
           <section className="w-full border-b border-black/[0.05]">
             <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-start">
@@ -447,6 +452,71 @@ const AplicacionDetalle = () => {
                 { label: 'Selección de Sistema', desc: 'Elegimos el revestimiento de alta gama idóneo según el uso y dimensiones de la piscina.' },
                 { label: 'Aplicación Certificada', desc: 'Ejecución meticulosa asegurando el sellado de cada rincón y punto crítico.' },
                 { label: 'Control de Calidad', desc: 'Supervisión final de la estanqueidad y el acabado decorativo personalizado.' },
+              ]} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* STICKY SCROLL — Mobiliario y Proyectos Especiales */}
+      {servicio.slug === 'mobiliario-y-proyectos-especiales' && (
+        <section className="w-full" style={{ backgroundColor: '#f7f6f5' }}>
+          {/* Mobile */}
+          <div className="block md:hidden">
+            <div className="w-full h-[40vh] sticky top-0 z-10 overflow-hidden">
+              <picture>
+                <img src="/images/mesa_mc.png" alt="Mesa de microcemento a medida Barcelona" className="w-full h-full object-cover" loading="lazy" />
+              </picture>
+            </div>
+            <div className="px-6 py-16 flex flex-col gap-16">
+              <StickyPoint num="01" title="Diseño continuo en cualquier soporte" text="El microcemento no se limita a grandes superficies; su verdadera magia reside en la versatilidad. Gracias a su adherencia química, podemos revestir desde encimeras de cocina hasta muebles de salón, transformando cada pieza en un elemento arquitectónico de autor." />
+              <StickyPointList num="02" title="Mobiliario y piezas de autor" items={[
+                { label: 'Encimeras y Lavabos', desc: 'Superficies estancas y personalizadas, sin juntas ni cortes.' },
+                { label: 'Bañeras de Obra', desc: 'Volúmenes minerales integrados en el espacio del baño.' },
+                { label: 'Muebles Integrados', desc: 'Estanterías, frentes y elementos decorativos con acabado continuo.' },
+              ]} />
+              <StickyPointList num="03" title="Adherencia sobre materiales existentes" items={[
+                { label: 'Piedra/Mármol', desc: 'Renovación sin demolición sobre superficies naturales existentes.' },
+                { label: 'Madera/Cristales', desc: 'Adherencia directa sobre soportes que otros materiales no toleran.' },
+                { label: 'Cerámica/Plaqueta', desc: 'Aplicación sobre azulejo y cerámica sin generar escombros.' },
+              ]} />
+              <StickyPoint num="04" title="El rigor del diagnóstico previo" text="Realizamos un análisis exhaustivo de humedades capilares y solidez mecánica antes de cualquier aplicación. Este diagnóstico garantiza que el microcemento se adhiera de forma definitiva, evitando cualquier riesgo de desprendimiento o filtración a largo plazo." />
+              <StickyPointList num="05" title="Proceso de transformación" items={[
+                { label: 'Análisis de compatibilidad', desc: 'Estudio del soporte y verificación de condiciones óptimas para la aplicación.' },
+                { label: 'Preparación técnica', desc: 'Limpieza y estabilización de la superficie base.' },
+                { label: 'Aplicación artesanal', desc: 'Ejecución manual por especialistas para lograr el acabado deseado.' },
+                { label: 'Sellado de alta resistencia', desc: 'Protección final que garantiza durabilidad y fácil mantenimiento.' },
+              ]} />
+            </div>
+          </div>
+
+          {/* Desktop */}
+          <div className="hidden md:flex w-full">
+            <div className="w-1/2 flex-shrink-0">
+              <div className="sticky top-0 h-screen overflow-hidden">
+                <picture>
+                  <img src="/images/mesa_mc.png" alt="Mesa de microcemento a medida Barcelona" className="w-full h-full object-cover" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div className="w-1/2 flex flex-col gap-0 py-24 px-12 xl:px-20">
+              <StickyPoint num="01" title="Diseño continuo en cualquier soporte" text="El microcemento no se limita a grandes superficies; su verdadera magia reside en la versatilidad. Gracias a su adherencia química, podemos revestir desde encimeras de cocina hasta muebles de salón, transformando cada pieza en un elemento arquitectónico de autor." />
+              <StickyPointList num="02" title="Mobiliario y piezas de autor" items={[
+                { label: 'Encimeras y Lavabos', desc: 'Superficies estancas y personalizadas, sin juntas ni cortes.' },
+                { label: 'Bañeras de Obra', desc: 'Volúmenes minerales integrados en el espacio del baño.' },
+                { label: 'Muebles Integrados', desc: 'Estanterías, frentes y elementos decorativos con acabado continuo.' },
+              ]} />
+              <StickyPointList num="03" title="Adherencia sobre materiales existentes" items={[
+                { label: 'Piedra/Mármol', desc: 'Renovación sin demolición sobre superficies naturales existentes.' },
+                { label: 'Madera/Cristales', desc: 'Adherencia directa sobre soportes que otros materiales no toleran.' },
+                { label: 'Cerámica/Plaqueta', desc: 'Aplicación sobre azulejo y cerámica sin generar escombros.' },
+              ]} />
+              <StickyPoint num="04" title="El rigor del diagnóstico previo" text="Realizamos un análisis exhaustivo de humedades capilares y solidez mecánica antes de cualquier aplicación. Este diagnóstico garantiza que el microcemento se adhiera de forma definitiva, evitando cualquier riesgo de desprendimiento o filtración a largo plazo." />
+              <StickyPointList num="05" title="Proceso de transformación" items={[
+                { label: 'Análisis de compatibilidad', desc: 'Estudio del soporte y verificación de condiciones óptimas para la aplicación.' },
+                { label: 'Preparación técnica', desc: 'Limpieza y estabilización de la superficie base.' },
+                { label: 'Aplicación artesanal', desc: 'Ejecución manual por especialistas para lograr el acabado deseado.' },
+                { label: 'Sellado de alta resistencia', desc: 'Protección final que garantiza durabilidad y fácil mantenimiento.' },
               ]} />
             </div>
           </div>

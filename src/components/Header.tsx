@@ -11,6 +11,7 @@ type RouteMode = 'static-dark' | 'scroll-light-to-dark' | 'observer-light-to-dar
 function getRouteMode(pathname: string): RouteMode {
   if (
     pathname === '/aplicaciones' ||
+    pathname === '/proyectos' ||
     pathname === '/materiales' ||
     pathname === '/contacto' ||
     pathname.startsWith('/aplicaciones/')
@@ -89,6 +90,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Inicio', path: '/' },
     { name: 'Aplicaciones', path: '/aplicaciones' },
+    { name: 'Proyectos', path: '/proyectos' },
     { name: 'Materiales', path: '/materiales' },
     { name: 'Nosotros', path: '/nosotros' },
   ].filter(link => !(link.path === '/' && location.pathname === '/'));

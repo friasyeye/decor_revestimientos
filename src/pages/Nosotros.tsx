@@ -9,7 +9,7 @@ const cardVariants = {
   visible: (i: number) => ({
     clipPath: 'inset(0% 0 0 0)',
     opacity: 1,
-    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: i * 0.35 },
+    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay: i * 0.35 },
   }),
 };
 
@@ -18,7 +18,7 @@ const stepVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: i * 0.25 },
+    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number], delay: i * 0.25 },
   }),
 };
 
@@ -89,17 +89,23 @@ const Nosotros = () => {
 
       {/* SECCIÓN 1: HERO */}
       <FadeIn>
-        <section id="nosotros-hero" className="relative h-[70vh] w-full overflow-hidden bg-black">
+        <section id="nosotros-hero" className="relative h-[35vh] md:h-[60vh] w-full overflow-hidden bg-black">
           <picture>
             <source media="(max-width: 600px)" srcSet="/optimized/aplicadores_microcemento-mobile.webp" type="image/webp" />
             <source srcSet="/optimized/aplicadores_microcemento-desktop.webp" type="image/webp" />
-            <img src="/images/aplicadores_microcemento.png" alt="Decor Revestimientos Barcelona" className="absolute inset-0 w-full h-full object-cover opacity-60" fetchPriority="high" loading="eager" />
+            <img 
+              src="/images/aplicadores_microcemento.png" 
+              alt="Decor Revestimientos Barcelona" 
+              className="absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-center opacity-60" 
+              fetchPriority="high" 
+              loading="eager" 
+            />
           </picture>
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-            <div className="flex flex-col gap-6 max-w-4xl">
-              <p className="text-xs md:text-sm font-body text-white/70 uppercase tracking-widest">Nosotros</p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-instrumental italic tracking-tighter text-white leading-tight">
+            <div className="flex flex-col gap-4 md:gap-6 max-w-4xl">
+              <p className="text-[10px] md:text-sm font-body text-white/70 uppercase tracking-widest">Nosotros</p>
+              <h1 className="text-3xl md:text-6xl lg:text-7xl font-instrumental italic tracking-tighter text-white leading-tight">
                 Arquitectura de autor a través del material
               </h1>
             </div>

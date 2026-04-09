@@ -2,7 +2,7 @@ const WhatsAppFloating = () => {
   return (
     <div className="fixed bottom-8 left-8 z-50">
       <a
-        href="https://wa.me/34603143050?text=Hola,%20me%20gustaria%20hablar%20con%20un%20técnico%20sobre%20mi%20proyecto"
+        href="https://wa.me/34603143050?text=Hola%20vengo%20de%20la%20web,%20me%20gustaria%20hablar%20con%20un%20t%C3%A9cnico%20sobre%20mi%20proyecto%20y%20pedir%20un%20presupuesto%20personalizado!"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 group"

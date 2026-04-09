@@ -159,7 +159,7 @@ const Materiales = () => {
               </p>
               <div className="flex flex-col gap-4">
                 <a
-                  href="/carta-colores-microcemento.pdf"
+                  href="/Decor_carta_colores.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-body text-gray-600 hover:text-black transition-colors border-b border-gray-300 hover:border-black pb-0.5 w-fit"
@@ -173,7 +173,7 @@ const Materiales = () => {
                   Gamas minerales y texturas suaves para suelos y paredes.
                 </p>
                 <a
-                  href="/carta-colores-mortex.pdf"
+                  href="/Decor_carta_mortex.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-body text-gray-600 hover:text-black transition-colors border-b border-gray-300 hover:border-black pb-0.5 w-fit mt-4"
@@ -202,20 +202,32 @@ const Materiales = () => {
             </p>
           </div>
           <div className="relative overflow-hidden">
-            <div
-              className="absolute inset-y-0 left-0 w-64 md:w-96 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"
-            />
-            <div
-              className="absolute inset-y-0 right-0 w-64 md:w-96 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"
-            />
-            <div className="flex justify-center gap-16 md:gap-24 px-24 md:px-40" style={{ animation: 'marquee 20s linear infinite' }}>
-              {['MORTEX', 'BEALgrounds', 'Mapei', 'Bautech', 'Sopro', 'Sika', 'MORTEX', 'BEALgrounds', 'Mapei', 'Bautech', 'Sopro', 'Sika'].map((brand, i) => (
-                <span
-                  key={i}
-                  className="text-gray-300 hover:text-gray-600 transition-colors duration-300 text-3xl md:text-4xl font-titles font-semibold tracking-tight cursor-default select-none shrink-0"
-                >
-                  {brand}
-                </span>
+            <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            <div className="flex items-center marquee-track">
+              {[
+                { src: '/images/Logo-Mortex.png', alt: 'Mortex' },
+                { src: '/images/logo-topciment-1.webp', alt: 'Topciment' },
+                { src: '/images/Evoluttion_Microdeck_logo.png', alt: 'Evoluttion Microdeck' },
+                { src: '/images/images (1).png', alt: 'CimentArt Microcement' },
+                { src: '/images/images (2).png', alt: 'Standard Microdeck' },
+                { src: '/images/logo-luxury-cement-solutions-c.png', alt: 'Luxury Cement Solutions' },
+                { src: '/images/BEALSTONE-Color.webp', alt: 'Bealstone Exclusive Terrazzo' },
+                { src: '/images/Logo-Mortex.png', alt: 'Mortex' },
+                { src: '/images/logo-topciment-1.webp', alt: 'Topciment' },
+                { src: '/images/Evoluttion_Microdeck_logo.png', alt: 'Evoluttion Microdeck' },
+                { src: '/images/images (1).png', alt: 'CimentArt Microcement' },
+                { src: '/images/images (2).png', alt: 'Standard Microdeck' },
+                { src: '/images/logo-luxury-cement-solutions-c.png', alt: 'Luxury Cement Solutions' },
+                { src: '/images/BEALSTONE-Color.webp', alt: 'Bealstone Exclusive Terrazzo' },
+              ].map((logo, i) => (
+                <div key={i} className="shrink-0 flex items-center justify-center px-10 md:px-16">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-10 md:h-14 w-auto object-contain"
+                  />
+                </div>
               ))}
             </div>
           </div>

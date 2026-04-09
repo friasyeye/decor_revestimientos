@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import logoLight from '../assets/raw/logo_tr.png';
-import logoDark from '../assets/raw/logo_negro.png';
+import logoDark from '../assets/raw/logo_negro.webp';
 
 // ─── Route classification ────────────────────────────────────────────────────
 

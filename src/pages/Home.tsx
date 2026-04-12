@@ -350,9 +350,9 @@ const Home = () => {
         <section id="nosotros" className="w-full border-b border-black/[0.03]">
           <div
             ref={cardsRef as React.RefObject<HTMLDivElement>}
-            className="max-w-7xl mx-auto px-6 md:px-10 pt-10 pb-14 grid md:grid-cols-2 gap-10 md:gap-20 items-start"
+            className="max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-32 grid md:grid-cols-2 gap-10 md:gap-20 items-start"
           >
-            <div className="stagger-item flex flex-col gap-6 md:gap-8 order-1 md:order-1 md:-mt-2 md:pl-8">
+            <div className="stagger-item flex flex-col gap-6 md:gap-8 order-1 md:order-1 md:pl-8">
               <h2 className="text-3xl md:text-5xl font-instrumental italic tracking-tighter">La maestría de un equipo que conoce el material</h2>
               <div className="flex flex-col gap-4 md:gap-6 text-gray-600 text-base md:text-lg leading-relaxed font-body">
                 <p>

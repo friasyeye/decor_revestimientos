@@ -100,7 +100,7 @@ const Home = () => {
       <section ref={heroRef} id="hero" className="relative h-[100svh] md:h-screen w-full overflow-hidden bg-black">
         {/* Imagen Hero - Posicionamiento ajustado: desplazamiento derecha en desktop, izquierda en móvil */}
         <picture>
-          <source media="(max-width: 600px)" srcSet="/optimized/habitacion_lamp-mobile.webp" type="image/webp" />
+          <source media="(max-width: 600px)" srcSet="/optimized/hero-mobile.webp" type="image/webp" />
           <source srcSet="/optimized/hero-desktop.webp" type="image/webp" />
           <img
             src="/optimized/hero-desktop.webp"

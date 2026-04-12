@@ -25,3 +25,5 @@ dist-ssr
 
 # Generated assets
 public/optimized
+!public/optimized/hero-desktop.webp
+!public/optimized/hero-mobile.webp

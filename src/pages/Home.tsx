@@ -99,13 +99,17 @@ const Home = () => {
       {/* 1. HERO SECTION */}
       <section ref={heroRef} id="hero" className="relative h-[100svh] md:h-screen w-full overflow-hidden bg-black">
         {/* Imagen Hero - Posicionamiento ajustado: desplazamiento derecha en desktop, izquierda en móvil */}
-        <OptimizedImage
-          srcName="hero"
-          alt="Microcemento en Barcelona"
-          className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-[0%_bottom] md:scale-110"
-          fetchPriority="high"
-          loading="eager"
-        />
+        <picture>
+          <source media="(max-width: 600px)" srcSet="/optimized/habitacion_lamp-mobile.webp" type="image/webp" />
+          <source srcSet="/optimized/hero-desktop.webp" type="image/webp" />
+          <img
+            src="/optimized/hero-desktop.webp"
+            alt="Microcemento en Barcelona"
+            className="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-[0%_bottom] md:scale-110"
+            fetchPriority="high"
+            loading="eager"
+          />
+        </picture>
 
         {/* Overlay para legibilidad */}
         <div className="absolute inset-0 bg-black/40" />

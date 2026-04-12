@@ -18,7 +18,7 @@ const CtaSection = ({ title, description, buttonText }: CtaSectionProps) => (
         </p>
         <a
           href="https://wa.me/34603143050?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto%20personalizado"
-          className="inline-flex items-center justify-center rounded-full px-8 py-3 transition-all duration-300 border border-black bg-black text-white hover:bg-white hover:text-black"
+          className="btn-press inline-flex items-center justify-center rounded-full px-8 py-3 border border-black bg-black text-white hover:bg-white hover:text-black"
         >
           {buttonText}
         </a>

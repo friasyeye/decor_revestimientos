@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
+import RevealImage from '../components/RevealImage';
 
 const CARDS = [
   {
@@ -87,16 +88,20 @@ const Aplicaciones = () => {
 
   return (
     <main className="flex flex-col">
-      <FadeIn>
+      <FadeIn onMount>
         <section className="w-full overflow-hidden border-b border-black/[0.03]">
           {/* Mobile layout: white space → image → text */}
           <div className="flex flex-col md:hidden pt-24">
             <div className="w-full">
-              <picture>
-                <source media="(max-width: 600px)" srcSet="/optimized/tecnica_superficie-mobile.webp" type="image/webp" />
-                <source srcSet="/optimized/tecnica_superficie-desktop.webp" type="image/webp" />
-                <img src="/images/tecnica_superficie.png" alt="Especialización Técnica" className="w-full h-auto object-cover" fetchPriority="high" loading="eager" />
-              </picture>
+              <RevealImage
+                src="/images/tecnica_superficie.png"
+                srcMobile="/optimized/tecnica_superficie-mobile.webp"
+                srcDesktop="/optimized/tecnica_superficie-desktop.webp"
+                alt="Especialización Técnica"
+                imgClassName="w-full h-auto object-cover"
+                loading="eager"
+                onMount
+              />
             </div>
             <div className="px-6 py-12 flex flex-col gap-6">
               <p className="text-xs font-body text-gray-400 uppercase tracking-widest">Aplicaciones</p>
@@ -115,10 +120,14 @@ const Aplicaciones = () => {
                 No todos los revestimientos son iguales. Seleccionamos cada material según las exigencias técnicas de tu espacio para garantizar adherencia, resistencia y una estética que perdura. No nos limitamos a aplicar un producto; analizamos el estado de tu soporte, los niveles de humedad y el uso previsto en cada zona de la vivienda para recomendarte la solución técnica exacta. Nuestro compromiso es que la belleza del acabado sea solo el reflejo de una base sólida y bien ejecutada por manos expertas en Barcelona.
               </p>
             </div>
-            <picture>
-              <source srcSet="/optimized/tecnica_superficie-desktop.webp" type="image/webp" />
-              <img src="/images/tecnica_superficie.png" alt="Especialización Técnica" className="w-auto max-h-[400px] ml-16 mr-20 mt-9" fetchPriority="high" loading="eager" />
-            </picture>
+            <RevealImage
+              src="/images/tecnica_superficie.png"
+              srcDesktop="/optimized/tecnica_superficie-desktop.webp"
+              alt="Especialización Técnica"
+              imgClassName="w-auto max-h-[400px] ml-16 mr-20 mt-9"
+              loading="eager"
+              onMount
+            />
           </div>
         </section>
       </FadeIn>
@@ -138,7 +147,7 @@ const Aplicaciones = () => {
                     onClick={() => scrollBy(-1)}
                     disabled={!canPrev}
                     aria-label="Anterior"
-                    className="w-11 h-11 rounded-full border border-black/15 flex items-center justify-center transition-all duration-200 hover:bg-black hover:text-white hover:border-black disabled:opacity-25 disabled:cursor-not-allowed"
+                    className="btn-press w-11 h-11 rounded-full border border-black/15 flex items-center justify-center hover:bg-black hover:text-white hover:border-black disabled:opacity-25 disabled:cursor-not-allowed"
                   >
                     <ChevronLeft size={20} />
                   </button>
@@ -146,7 +155,7 @@ const Aplicaciones = () => {
                     onClick={() => scrollBy(1)}
                     disabled={!canNext}
                     aria-label="Siguiente"
-                    className="w-11 h-11 rounded-full border border-black/15 flex items-center justify-center transition-all duration-200 hover:bg-black hover:text-white hover:border-black disabled:opacity-25 disabled:cursor-not-allowed"
+                    className="btn-press w-11 h-11 rounded-full border border-black/15 flex items-center justify-center hover:bg-black hover:text-white hover:border-black disabled:opacity-25 disabled:cursor-not-allowed"
                   >
                     <ChevronRight size={20} />
                   </button>
@@ -173,7 +182,7 @@ const Aplicaciones = () => {
                       <picture>
                         {card.srcMobile && <source media="(max-width: 600px)" srcSet={card.srcMobile} type="image/webp" />}
                         {card.srcDesktop && <source srcSet={card.srcDesktop} type="image/webp" />}
-                        <img src={card.src} alt={card.alt} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                        <img src={card.src} alt={card.alt} className="w-full h-full object-cover img-hover-scale" loading="lazy" />
                       </picture>
                       <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                         <ArrowRight size={20} className="text-black" />

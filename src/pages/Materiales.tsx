@@ -1,12 +1,24 @@
+import React from 'react';
 import FadeIn from '../components/FadeIn';
 import CtaSection from '../components/CtaSection';
+import RevealImage from '../components/RevealImage';
+import { useReveal } from '../hooks/useReveal';
+
+const SWATCHES = [
+  { name: 'Gris Cemento', hex: '#8A8A8A' },
+  { name: 'Arena', hex: '#C8B99A' },
+  { name: 'Hueso', hex: '#E8E0D0' },
+  { name: 'Antracita', hex: '#3A3A3A' },
+];
 
 const Materiales = () => {
+  const swatchesRef = useReveal('.stagger-item', { threshold: 0.1 });
+
   return (
     <main className="flex flex-col">
 
       {/* HERO HEADER */}
-      <FadeIn>
+      <FadeIn onMount>
         <section className="w-full border-b border-black/[0.03] pt-28 pb-20">
           <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
             <div className="flex flex-col gap-6 md:gap-8 order-2 md:order-1 md:max-w-3xl">
@@ -66,12 +78,14 @@ const Materiales = () => {
               </div>
             </div>
             {/* Imagen */}
-            <div className="order-1 md:order-2 overflow-hidden">
-              <picture>
-                <source media="(max-width: 600px)" srcSet="/optimized/mc_1-mobile.webp" type="image/webp" />
-                <source srcSet="/optimized/mc_1-desktop.webp" type="image/webp" />
-                <img src="/images/mc_1.jpg" alt="Microcemento de alta gama" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto md:mt-[5.5rem]" />
-              </picture>
+            <div className="order-1 md:order-2">
+              <RevealImage
+                src="/images/mc_1.jpg"
+                srcMobile="/optimized/mc_1-mobile.webp"
+                srcDesktop="/optimized/mc_1-desktop.webp"
+                alt="Microcemento de alta gama"
+                imgClassName="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto md:mt-[5.5rem]"
+              />
             </div>
           </div>
         </section>
@@ -114,12 +128,14 @@ const Materiales = () => {
               </div>
             </div>
             {/* Imagen */}
-            <div className="order-1 md:order-2 overflow-hidden">
-              <picture>
-                <source media="(max-width: 600px)" srcSet="/optimized/mc_2-mobile.webp" type="image/webp" />
-                <source srcSet="/optimized/mc_2-desktop.webp" type="image/webp" />
-                <img src="/images/mc_2.jpg" alt="Micromortero Mortex" loading="lazy" className="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto md:mt-[5.5rem]" />
-              </picture>
+            <div className="order-1 md:order-2">
+              <RevealImage
+                src="/images/mc_2.jpg"
+                srcMobile="/optimized/mc_2-mobile.webp"
+                srcDesktop="/optimized/mc_2-desktop.webp"
+                alt="Micromortero Mortex"
+                imgClassName="w-[90%] h-[320px] md:h-[360px] object-cover md:ml-auto md:mt-[5.5rem]"
+              />
             </div>
           </div>
         </section>
@@ -136,17 +152,19 @@ const Materiales = () => {
                 Una paleta cuidadosamente seleccionada que garantiza harmonía y atemporalidad en cualquier espacio.
               </p>
             </div>
-            {/* Swatches */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-              {[
-                { name: 'Gris Cemento', hex: '#8A8A8A' },
-                { name: 'Arena', hex: '#C8B99A' },
-                { name: 'Hueso', hex: '#E8E0D0' },
-                { name: 'Antracita', hex: '#3A3A3A' },
-              ].map((swatch) => (
-                <div key={swatch.name} className="flex flex-col items-start gap-4">
+            {/* Swatches — staggered reveal */}
+            <div
+              ref={swatchesRef as React.RefObject<HTMLDivElement>}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10"
+            >
+              {SWATCHES.map((swatch, i) => (
+                <div
+                  key={swatch.name}
+                  className="stagger-item flex flex-col items-start gap-4"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
                   <div
-                    className="w-full aspect-square rounded-full shadow-md transition-transform duration-300 hover:scale-105 cursor-default"
+                    className="w-full aspect-square rounded-full shadow-md cursor-default"
                     style={{ backgroundColor: swatch.hex }}
                   />
                   <p className="text-sm font-body font-medium text-gray-700">{swatch.name}</p>

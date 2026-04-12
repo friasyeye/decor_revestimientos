@@ -1,8 +1,10 @@
+import React from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import FadeIn from '../components/FadeIn';
 import OptimizedImage from '../components/OptimizedImage';
 import CtaSection from '../components/CtaSection';
+import { useRevealElement } from '../hooks/useReveal';
 
 const cardVariants = {
   hidden: { clipPath: 'inset(100% 0 0 0)', opacity: 0 },
@@ -76,6 +78,8 @@ const Nosotros = () => {
   const stepsInView = useInView(stepsRef, { once: true, margin: '0px 0px -100px 0px' });
   const stepsControls = useAnimation();
 
+  const nosotrosImgRef = useRevealElement();
+
   useEffect(() => {
     if (cardsInView) cardsControls.start('visible');
   }, [cardsInView, cardsControls]);
@@ -88,7 +92,7 @@ const Nosotros = () => {
     <main className="flex flex-col">
 
       {/* SECCIÓN 1: HERO */}
-      <FadeIn>
+      <FadeIn onMount>
         <section id="nosotros-hero" className="relative h-[35vh] md:h-[60vh] w-full overflow-hidden bg-black">
           <picture>
             <source media="(max-width: 600px)" srcSet="/optimized/aplicadores_microcemento-mobile.webp" type="image/webp" />
@@ -114,10 +118,13 @@ const Nosotros = () => {
       </FadeIn>
 
       {/* SECCIÓN 2: EL ARTESANO Y LA CIUDAD */}
-      <FadeIn delay={0.1}>
+      <FadeIn delay={0.2} onMount>
         <section className="w-full border-b border-black/[0.03]">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-            <div className="order-1 overflow-hidden">
+            <div
+              ref={nosotrosImgRef as React.RefObject<HTMLDivElement>}
+              className="order-1 overflow-hidden img-reveal"
+            >
               <OptimizedImage
                 srcName="nosotros"
                 alt="Aplicación de microcemento"

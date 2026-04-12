@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import FadeIn from '../components/FadeIn';
 import { getServicio, servicios } from '../data/servicios';
 import CtaSection from '../components/CtaSection';
+
+const EASE_OUT = [0.23, 1, 0.32, 1] as const;
 
 const ctaContent: Record<string, { title: string; description: string; buttonText: string }> = {
   'banos-y-zonas-humedas': {
@@ -34,13 +37,19 @@ const ctaContent: Record<string, { title: string; description: string; buttonTex
 };
 
 const StickyPoint = ({ num, title, text }: { num: string; title: string; text: string }) => (
-  <div className="flex flex-col gap-5 pb-24 border-b border-black/10 last:border-0">
+  <motion.div
+    className="flex flex-col gap-5 pb-24 border-b border-black/10 last:border-0"
+    initial={{ opacity: 0, y: 28 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+    transition={{ duration: 0.75, ease: EASE_OUT }}
+  >
     <span className="text-5xl md:text-6xl font-instrumental italic tracking-tighter text-black/15 leading-none select-none">
       {num}
     </span>
     <h3 className="text-2xl md:text-3xl font-instrumental italic tracking-tighter text-black">{title}</h3>
     <p className="text-gray-600 text-base md:text-lg leading-[1.7] font-body">{text}</p>
-  </div>
+  </motion.div>
 );
 
 const StickyPointList = ({
@@ -52,7 +61,13 @@ const StickyPointList = ({
   title: string;
   items: { label: string; desc: string }[];
 }) => (
-  <div className="flex flex-col gap-5 pb-24 border-b border-black/10 last:border-0">
+  <motion.div
+    className="flex flex-col gap-5 pb-24 border-b border-black/10 last:border-0"
+    initial={{ opacity: 0, y: 28 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+    transition={{ duration: 0.75, ease: EASE_OUT }}
+  >
     <span className="text-5xl md:text-6xl font-instrumental italic tracking-tighter text-black/15 leading-none select-none">
       {num}
     </span>
@@ -65,7 +80,7 @@ const StickyPointList = ({
         </li>
       ))}
     </ul>
-  </div>
+  </motion.div>
 );
 
 const AplicacionDetalle = () => {
@@ -100,32 +115,38 @@ const AplicacionDetalle = () => {
   return (
     <main className="flex flex-col">
       {/* HERO */}
-      <FadeIn>
-        <section className="relative h-[35vh] md:h-[35vh] w-full overflow-hidden bg-black">
-          <img
-            src={servicio.heroImage}
-            alt={servicio.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-70"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-end pb-6 md:pb-8">
-            <div className="max-w-7xl mx-auto px-6 md:px-10 w-full flex flex-col gap-4">
-              {/* Breadcrumbs */}
-              <nav className="flex items-center gap-2 text-white/70 text-sm font-body">
-                <Link to="/" className="hover:text-white transition-colors">Inicio</Link>
-                <span>/</span>
-                <Link to="/aplicaciones" className="hover:text-white transition-colors">Aplicaciones</Link>
-                <span>/</span>
-                <span className="text-white">{servicio.title}</span>
-              </nav>
-              <h1 className="text-4xl md:text-6xl font-instrumental italic tracking-tighter text-white max-w-2xl leading-[0.9]">
-                {servicio.title}
-              </h1>
-            </div>
+      <section className="relative h-[35vh] md:h-[35vh] w-full overflow-hidden bg-black">
+        <motion.img
+          src={servicio.heroImage}
+          alt={servicio.title}
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          fetchPriority="high"
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.7 }}
+          transition={{ duration: 1.1, ease: EASE_OUT }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <motion.div
+          className="absolute inset-0 flex flex-col justify-end pb-6 md:pb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: EASE_OUT, delay: 0.3 }}
+        >
+          <div className="max-w-7xl mx-auto px-6 md:px-10 w-full flex flex-col gap-4">
+            {/* Breadcrumbs */}
+            <nav className="flex items-center gap-2 text-white/70 text-sm font-body">
+              <Link to="/" className="hover:text-white transition-colors">Inicio</Link>
+              <span>/</span>
+              <Link to="/aplicaciones" className="hover:text-white transition-colors">Aplicaciones</Link>
+              <span>/</span>
+              <span className="text-white">{servicio.title}</span>
+            </nav>
+            <h1 className="text-4xl md:text-6xl font-instrumental italic tracking-tighter text-white max-w-2xl leading-[0.9]">
+              {servicio.title}
+            </h1>
           </div>
-        </section>
-      </FadeIn>
+        </motion.div>
+      </section>
 
       {/* CONTENIDO TÉCNICO — solo para slugs que no tienen sticky scroll */}
       {servicio.slug !== 'banos-y-zonas-humedas' && servicio.slug !== 'exteriores-y-suelos' && servicio.slug !== 'piscinas' && servicio.slug !== 'escaleras' && servicio.slug !== 'mobiliario-y-proyectos-especiales' && (
@@ -144,7 +165,7 @@ const AplicacionDetalle = () => {
                 ))}
                 <Link
                   to="/contacto"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 transition-all duration-300 border border-black hover:bg-black hover:text-white self-start mt-4"
+                  className="btn-press inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 border border-black hover:bg-black hover:text-white self-start mt-4"
                 >
                   Solicitar consulta técnica <ArrowRight size={18} />
                 </Link>
@@ -546,7 +567,7 @@ const AplicacionDetalle = () => {
                       <img
                         src={s.cardImage}
                         alt={s.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover img-hover-scale"
                         loading="lazy"
                       />
                     </div>

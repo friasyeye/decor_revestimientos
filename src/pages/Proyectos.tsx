@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import FadeIn from '../components/FadeIn';
 import CtaSection from '../components/CtaSection';
 import Lightbox from '../components/Lightbox';
@@ -119,8 +119,34 @@ const ZIGZAG: { side: string; width: string; mt: string }[] = [
   { side: 'ml-auto mr-[1%]', width: 'w-[49%]', mt: 'mt-[-3rem]' },
 ];
 
+// Hook to apply img-reveal class to all project images via IntersectionObserver
+function useProjectReveal(containerRef: React.RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const items = container.querySelectorAll<HTMLElement>('.proj-item');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+    );
+    items.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  });
+}
+
 const Proyectos = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const desktopGridRef = useRef<HTMLDivElement>(null);
+  const mobileGridRef = useRef<HTMLDivElement>(null);
+  useProjectReveal(desktopGridRef);
+  useProjectReveal(mobileGridRef);
 
   const openLightbox = useCallback((index: number) => {
     setLightboxIndex(index);
@@ -138,7 +164,7 @@ const Proyectos = () => {
     <main className="flex flex-col">
 
       {/* HERO */}
-      <FadeIn>
+      <FadeIn onMount>
         <section className="w-full border-b border-black/[0.03] pt-28 pb-20 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col gap-6 md:gap-8">
             <p className="text-xs md:text-sm font-body text-gray-400 uppercase tracking-widest">Proyectos</p>
@@ -177,16 +203,17 @@ const Proyectos = () => {
       </FadeIn>
 
       {/* PROJECT GRID */}
-      <FadeIn delay={0.2}>
+      <FadeIn delay={0.3} onMount>
         <section className="w-full border-b border-black/[0.03]">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
 
             {/* MOBILE */}
-            <div className="flex flex-col gap-6 md:hidden">
+            <div ref={mobileGridRef} className="flex flex-col gap-6 md:hidden">
               {PROJECTS.map((project, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden cursor-pointer"
+                  className="proj-item img-reveal relative overflow-hidden cursor-pointer"
+                  style={{ transitionDelay: `${(index % 3) * 80}ms` }}
                   onClick={() => openLightbox(index)}
                 >
                   <picture>
@@ -215,13 +242,13 @@ const Proyectos = () => {
             </div>
 
             {/* DESKTOP — zig-zag editorial layout */}
-            <div className="hidden md:flex md:flex-col">
+            <div ref={desktopGridRef} className="hidden md:flex md:flex-col">
               {PROJECTS.map((project, index) => {
                 const zz = ZIGZAG[index % ZIGZAG.length];
                 return (
                   <div
                     key={index}
-                    className={`group relative overflow-hidden cursor-pointer mb-10 ${zz.width} ${zz.side} ${zz.mt}`}
+                    className={`proj-item img-reveal group relative overflow-hidden cursor-pointer mb-10 ${zz.width} ${zz.side} ${zz.mt}`}
                     onClick={() => openLightbox(index)}
                   >
                     <picture>
@@ -234,8 +261,7 @@ const Proyectos = () => {
                       <img
                         src={project.image}
                         alt={project.alt}
-                        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${project.aspect === 'vertical' ? 'aspect-[3/4]' : 'aspect-[4/3]'
-                          }`}
+                        className={`w-full h-full object-cover transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04] ${project.aspect === 'vertical' ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}
                         loading={index < 2 ? 'eager' : 'lazy'}
                       />
                     </picture>

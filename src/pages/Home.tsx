@@ -59,9 +59,11 @@ const SCROLL_AMOUNT = 320;
 // Strong ease-out — Emil Kowalski
 const EASE_OUT = [0.23, 1, 0.32, 1] as const;
 
-// Hero headline split into two lines for staggered word reveal
+// Hero headline — mobile: 2 lines, desktop: 2 lines (different split)
 const HERO_LINE_1 = ['Elegancia', 'y', 'durabilidad'];
-const HERO_LINE_2 = ['en', 'cada', 'rincón', 'de', 'tu', 'hogar'];
+const HERO_LINE_2_MOBILE = ['en', 'cada', 'rincón', 'de', 'tu', 'hogar'];
+const HERO_LINE_2_DESKTOP = ['en', 'cada', 'rincón', 'de'];
+const HERO_LINE_3_DESKTOP = ['tu', 'hogar'];
 
 const Home = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -129,13 +131,13 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Hero text — word-by-word stagger reveal */}
-        <div className="absolute inset-0 flex items-start pt-[18%] md:pt-0 md:items-center">
+        <div className="absolute inset-0 flex items-start pt-[32%] md:pt-0 md:items-center">
           <div className="w-full max-w-7xl mx-auto px-6 md:px-10 text-white text-left md:-mt-22">
             <div className="flex flex-col gap-4 md:gap-3 max-w-4xl pt-20 md:pt-0">
 
               {/* Eyebrow — fade in first */}
               <motion.h1
-                className="text-[11.5px] tracking-[-0.03em] md:text-[15px] font-instrumental italic md:font-geist md:not-italic md:tracking-tighter text-white/90 font-medium drop-shadow-sm -mb-2 md:mb-0"
+                className="tracking-[-0.06em] md:text-[29px] font-instrumental italic md:font-geist md:not-italic md:tracking-tighter text-white/90 font-medium drop-shadow-sm -mb-2 md:mb-0 whitespace-nowrap" style={{ fontSize: 'clamp(9px, 3.2vw, 12.5px)', letterSpacing: '-0.04em' }}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.1 }}
@@ -144,15 +146,15 @@ const Home = () => {
               </motion.h1>
 
               {/* Main headline — words reveal from below, staggered */}
-              <p className="text-[2rem] sm:text-5xl md:text-[4rem] font-instrumental tracking-[-0.02em] md:tracking-tighter leading-[1.5] md:leading-[0.85] italic drop-shadow-md">
+              <p className="text-[clamp(1.6rem,6.5vw,2.55rem)] md:text-[4rem] font-instrumental tracking-[-0.02em] md:tracking-tighter leading-[1.15] md:leading-[1.05] italic drop-shadow-md">
                 {/* Line 1 */}
                 <span className="block">
                   {HERO_LINE_1.map((word, i) => (
                     <span key={word + i} className="word-reveal-wrap mr-[0.25em]">
                       <motion.span
                         className="inline-block"
-                        initial={{ y: '110%', opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        initial={{ clipPath: 'inset(100% -10% 0% -10%)', opacity: 0 }}
+                        animate={{ clipPath: 'inset(0% -10% 0% -10%)', opacity: 1 }}
                         transition={{
                           duration: 0.8,
                           ease: EASE_OUT,
@@ -164,19 +166,30 @@ const Home = () => {
                     </span>
                   ))}
                 </span>
-                {/* Line 2 */}
-                <span className="block">
-                  {HERO_LINE_2.map((word, i) => (
+                {/* Line 2 — mobile: all words together */}
+                <span className="block md:hidden">
+                  {HERO_LINE_2_MOBILE.map((word, i) => (
                     <span key={word + i} className="word-reveal-wrap mr-[0.25em]">
                       <motion.span
                         className="inline-block"
-                        initial={{ y: '110%', opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{
-                          duration: 0.8,
-                          ease: EASE_OUT,
-                          delay: 0.55 + i * 0.06,
-                        }}
+                        initial={{ clipPath: 'inset(100% -10% 0% -10%)', opacity: 0 }}
+                        animate={{ clipPath: 'inset(0% -10% 0% -10%)', opacity: 1 }}
+                        transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.55 + i * 0.06 }}
+                      >
+                        {word}
+                      </motion.span>
+                    </span>
+                  ))}
+                </span>
+                {/* Line 2 — desktop: all words together */}
+                <span className="hidden md:block">
+                  {[...HERO_LINE_2_DESKTOP, ...HERO_LINE_3_DESKTOP].map((word, i) => (
+                    <span key={word + i} className="word-reveal-wrap mr-[0.25em]">
+                      <motion.span
+                        className="inline-block"
+                        initial={{ clipPath: 'inset(100% -10% 0% -10%)', opacity: 0 }}
+                        animate={{ clipPath: 'inset(0% -10% 0% -10%)', opacity: 1 }}
+                        transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.55 + i * 0.06 }}
                       >
                         {word}
                       </motion.span>
@@ -187,18 +200,18 @@ const Home = () => {
 
               {/* CTA mobile only */}
               <motion.div
-                className="flex flex-col gap-2 mt-16 md:hidden"
+                className="flex flex-col gap-2 mt-28 md:hidden"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: EASE_OUT, delay: 1.0 }}
               >
                 <a
                   href="https://wa.me/34603143050?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto%20personalizado"
-                  className="btn-press inline-flex items-center gap-2 self-start rounded-lg px-5 py-3 text-sm font-medium font-gidole bg-white text-black hover:bg-white/90"
+                  className="btn-press header-cta-btn inline-flex items-center gap-2 self-start rounded-lg pl-3 pr-5 py-3 text-sm font-medium font-gidole border"
                 >
                   Calcula tu presupuesto <ArrowRight size={15} />
                 </a>
-                <p className="text-xs text-white/60 font-body mt-2">Te llevará menos de 2 minutos</p>
+                <p className="text-xs text-white/60 font-body mt-2 ml-2">Te llevará menos de 2 minutos</p>
               </motion.div>
             </div>
           </div>

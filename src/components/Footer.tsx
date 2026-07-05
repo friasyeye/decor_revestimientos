@@ -47,7 +47,7 @@ const Footer = () => {
         <div className="mt-24 pt-8 border-t border-gray-700 text-sm text-gray-400">
           <div className="flex flex-col md:flex-row justify-between">
             <p>&copy; {new Date().getFullYear()} Decor Revestimientos. Todos los derechos reservados.</p>
-            <p>Diseñado por <a href="https://automatizaya-ia.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">Automatiza Ya</a></p>
+            <p>Diseñado por <a href="https://pulsarstudioo.es" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">Pulsar Studio</a></p>
           </div>
         </div>
       </div>
